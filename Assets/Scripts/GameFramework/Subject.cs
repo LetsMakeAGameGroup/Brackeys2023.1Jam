@@ -29,4 +29,14 @@ public abstract class Subject : MonoBehaviour
     {
         compleated = false;
     }
+
+    public virtual void OnDrawGizmos()
+    {
+        if (listener != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, listener.transform.position);
+        }
+    }
+
 }

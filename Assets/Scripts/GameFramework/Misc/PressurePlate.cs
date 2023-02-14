@@ -4,36 +4,52 @@ using UnityEngine;
 
 public class PressurePlate : Subject
 {
-    public GameObject entityReactor;
     public bool canBeToggle = true;
+    bool beingPressed;
 
-    private void OnTriggerEnter(Collider other)
+    public LayerMask layerMask;
+    public float pressurePlateDetectHeight = .25f;
+
+    private void FixedUpdate()
     {
-        if (other.CompareTag("Player"))
+        if (Physics.CheckBox(transform.position, new Vector3(transform.localScale.x, pressurePlateDetectHeight, transform.localScale.z), transform.rotation, layerMask))
         {
             NotifyListener();
+            AnimatePlate(true);
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (canBeToggle) 
+        else 
         {
-            if (other.CompareTag("Player")) 
+            if (canBeToggle)
             {
                 Reset();
+                AnimatePlate(false);
             }
         }
     }
 
-    private void OnDrawGizmos()
+    void AnimatePlate(bool isPressed)
     {
-        if (entityReactor != null) 
+        if (isPressed)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, entityReactor.transform.position);
+            if (beingPressed) { return; }
+
+            transform.Translate(Vector3.down * 0.05f);
+            beingPressed = true;
+        }
+        else 
+        {
+            if (!beingPressed) { return; }
+
+            transform.Translate(Vector3.up * 0.05f);
+            beingPressed = false;
         }
     }
 
+    public override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
 
+        Gizmos.color = Color.green;
+        Gizmos.DrawCube(transform.position, new Vector3(transform.localScale.x * 2, pressurePlateDetectHeight, transform.localScale.z * 2));
+    }
 }

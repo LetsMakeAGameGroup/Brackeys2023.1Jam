@@ -2,12 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface IPuzzleSuccessReceptor 
+{
+    public void OnPuzzleSuccess();
+}
+
 public class PuzzleManager : Listener
 {
+    public GameObject PuzzleSuccessReceiver;
 
     public void OnPuzzleComplete() 
     {
         Debug.Log("Puzzle Completed");
+
+        if (PuzzleSuccessReceiver)
+        {
+            IPuzzleSuccessReceptor receptor = PuzzleSuccessReceiver.GetComponent<IPuzzleSuccessReceptor>();
+
+            if (receptor != null)
+            {
+                receptor.OnPuzzleSuccess();
+            }
+        }
     }
 
     public override void ReceiveMessage(Subject Invoker)
@@ -29,4 +45,14 @@ public class PuzzleManager : Listener
             OnPuzzleComplete();
         }
     }
+
+    public void OnDrawGizmos()
+    {
+        if (PuzzleSuccessReceiver != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, PuzzleSuccessReceiver.transform.position);
+        }
+    }
+
 }

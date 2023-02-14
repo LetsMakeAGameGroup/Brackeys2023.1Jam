@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec4c41b61729bb4b8b98fa5bcc8fec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PuzzleSuccessReceiver: {fileID: 1059009184}
 --- !u!4 &34886544
 Transform:
   m_ObjectHideFlags: 0
@@ -259,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 67030893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5.9068, y: 5.9068, z: 5.9068}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -657,7 +658,7 @@ GameObject:
   - component: {fileID: 948863124}
   - component: {fileID: 948863123}
   - component: {fileID: 948863122}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -752,7 +753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948863121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.35, y: 2.53, z: -3.28}
+  m_LocalPosition: {x: 3.35, y: 2.53, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -768,7 +769,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 988439252}
-  - component: {fileID: 988439251}
   - component: {fileID: 988439250}
   m_Layer: 0
   m_Name: PressurePlateB
@@ -791,21 +791,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listener: {fileID: 34886543}
   compleated: 0
-  entityReactor: {fileID: 1059009184}
   canBeToggle: 1
---- !u!65 &988439251
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988439249}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1219893, y: 0.6177677, z: 2.1219893}
-  m_Center: {x: 0, y: 0.46519786, z: -0.08308363}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  pressurePlateDetectHeight: 0.25
 --- !u!4 &988439252
 Transform:
   m_ObjectHideFlags: 0
@@ -814,13 +804,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988439249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0, z: 1.62}
+  m_LocalPosition: {x: -2.1, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 745644340}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1059009184
 GameObject:
@@ -931,7 +921,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1218412014
 GameObject:
@@ -942,7 +932,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1218412017}
-  - component: {fileID: 1218412016}
   - component: {fileID: 1218412015}
   m_Layer: 0
   m_Name: PressurePlateA
@@ -965,21 +954,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listener: {fileID: 34886543}
   compleated: 0
-  entityReactor: {fileID: 1059009184}
   canBeToggle: 1
---- !u!65 &1218412016
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218412014}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1219893, y: 0.6177677, z: 2.1219893}
-  m_Center: {x: 0, y: 0.46519786, z: -0.08308363}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  pressurePlateDetectHeight: 0.25
 --- !u!4 &1218412017
 Transform:
   m_ObjectHideFlags: 0
@@ -988,13 +967,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218412014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0, z: -3.74}
+  m_LocalPosition: {x: -2, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1808069711}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331913225
 GameObject:
@@ -1009,7 +988,7 @@ GameObject:
   - component: {fileID: 1331913228}
   - component: {fileID: 1331913227}
   - component: {fileID: 1331913226}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1104,7 +1083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331913225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.35, y: 2.53, z: 1.63}
+  m_LocalPosition: {x: 3.35, y: 2.53, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

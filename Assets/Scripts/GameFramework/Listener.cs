@@ -12,4 +12,13 @@ public abstract class Listener : MonoBehaviour
     }
 
     public abstract void ReceiveMessage(Subject Invoker);
+
+    private void OnDrawGizmos()
+    {
+        //if (listener != null)
+        //{
+        //    Gizmos.color = Color.red;
+        //    Gizmos.DrawLine(transform.position, listener.transform.position);
+        //}
+    }
 }
