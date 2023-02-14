@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPuzzleSucessReceiver 
+public class PuzzleManager : Listener
 {
-    public void OnPuzzleSuccess();
-}
-
-public class PuzzleManager : Subject
-{
-    //PuzzleBase _Puzzle;
-
-    public GameObject OnSucessObject;
 
     public void OnPuzzleComplete() 
     {
-        IPuzzleSucessReceiver sucessReceiver = OnSucessObject.GetComponent<IPuzzleSucessReceiver>();
+        Debug.Log("Puzzle Completed");
+    }
 
-        if (sucessReceiver != null) 
+    public override void ReceiveMessage(Subject Invoker)
+    {
+        int ammountOfCompleted = 0;
+
+        for (int i = 0; i < subjects.Count; i++) 
         {
-            sucessReceiver.OnPuzzleSuccess();
+            if (subjects[i].compleated)
+            {
+                ammountOfCompleted++;
+            }
+        }
+
+        Debug.Log(ammountOfCompleted + " vs " + subjects.Count);
+
+        if (ammountOfCompleted == subjects.Count)
+        {
+            OnPuzzleComplete();
         }
     }
 }

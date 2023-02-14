@@ -4,23 +4,29 @@ using UnityEngine;
 
 public abstract class Subject : MonoBehaviour
 {
-    public List<Observer> _observer = new List<Observer>();
+    public Listener listener;
+    public bool compleated;
 
-    public void Attatch(Observer observer) 
+    private void Start()
     {
-        _observer.Add(observer);
-    }
-
-    public void Detach(Observer observer) 
-    {
-        _observer.Remove(observer);
-    }
-
-    public void NotifyObservers() 
-    {
-        foreach (Observer observer in _observer) 
+        if (listener) 
         {
-            observer.Notify(this);
+            listener.AddSubject(this);
         }
+    }
+
+    public void NotifyListener() 
+    {
+        compleated = true;
+
+        if (listener != null) 
+        {
+            listener.ReceiveMessage(this);
+        }
+    }
+
+    public void Reset()
+    {
+        compleated = false;
     }
 }

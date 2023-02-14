@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IPuzzleSucessReceiver
+public class Door : MonoBehaviour
 {
-    public void OnPuzzleSuccess()
+    public bool isClosed = true;
+
+    void ToggleDoor() 
     {
-        gameObject.SetActive(false);
+        isClosed = !isClosed;
+        gameObject.SetActive(isClosed);
     }
 }
