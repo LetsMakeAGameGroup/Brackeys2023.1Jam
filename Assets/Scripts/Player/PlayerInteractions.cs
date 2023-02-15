@@ -6,12 +6,13 @@ public class PlayerInteractions : MonoBehaviour {
 
     [SerializeField] private float interactDistance = 2f;
 
-    private Pickupable holdingObject;
+    [HideInInspector] public Pickupable holdingObject;
 
     private void Update() {
         // Cast a ray from the camera to where the player is looking "interactDistance" away.
         Ray ray = GetComponent<PlayerCameraController>().GetPlayerCamera().ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance)) {
+            // Check if the object is interactable
             if (!hit.transform.TryGetComponent(out IInteractable interactable)) {
                 UIManager.Instance.ToggleInteractionUI(this, null);
                 return;
@@ -27,23 +28,12 @@ public class PlayerInteractions : MonoBehaviour {
             UIManager.Instance.ToggleInteractionUI(this, null);
         }
 
+        // Check if player is trying to drop holding object
         if (Input.GetButtonDown("Fire1")) {
             if (holdingObject != null) {
-                holdingObject.OnDrop();
+                holdingObject.OnDrop(this);
                 holdingObject = null;
             }
         }
-    }
-
-    public void PickupObject(Pickupable _object) {
-        if (holdingObject != null) {
-            holdingObject.OnDrop();
-        }
-        holdingObject = _object;
-    }
-
-    public bool IsHoldingObject() {
-        if (holdingObject != null) return true;
-        else return false;
     }
 }
