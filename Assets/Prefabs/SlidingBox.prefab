@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1291158603436417662}
   - component: {fileID: 1291158603436417663}
   - component: {fileID: 1291158603436417648}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SlidingBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
