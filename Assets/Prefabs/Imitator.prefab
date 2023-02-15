@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7791510150728498432}
   - component: {fileID: 7791510150728498686}
   - component: {fileID: 7791510150728498687}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Imitator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
