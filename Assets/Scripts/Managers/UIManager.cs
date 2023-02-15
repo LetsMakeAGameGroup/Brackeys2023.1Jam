@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour {
     }
 
     // Toggles the interaction UI if it hasn't been done so already.
-    public void ToggleInteractionUI(PlayerInteractions player, Interactable interactable) {
+    public void ToggleInteractionUI(PlayerInteractions player, IInteractable interactable) {
         // Disables UI if the player is holding something already
         if (interactable != null && interactable.GetType() == typeof(Pickupable) && player.IsHoldingObject()) {
             if (interactUI.activeSelf) {

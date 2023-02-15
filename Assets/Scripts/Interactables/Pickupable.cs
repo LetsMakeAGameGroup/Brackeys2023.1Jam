@@ -1,8 +1,8 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Pickupable : Interactable {
-    public override void OnInteract(PlayerInteractions interactee) {
+public class Pickupable : MonoBehaviour, IInteractable {
+    public void OnInteract(PlayerInteractions interactee) {
         if (interactee.IsHoldingObject()) return;
 
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

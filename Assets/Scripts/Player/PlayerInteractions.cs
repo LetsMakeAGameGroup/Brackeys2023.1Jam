@@ -12,7 +12,7 @@ public class PlayerInteractions : MonoBehaviour {
         // Cast a ray from the camera to where the player is looking "interactDistance" away.
         Ray ray = GetComponent<PlayerCameraController>().GetPlayerCamera().ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance)) {
-            if (!hit.transform.TryGetComponent(out Interactable interactable)) {
+            if (!hit.transform.TryGetComponent(out IInteractable interactable)) {
                 UIManager.Instance.ToggleInteractionUI(this, null);
                 return;
             }
