@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerCameraController))]
@@ -8,6 +9,7 @@ public class PlayerInteractions : MonoBehaviour {
 
     [HideInInspector] public Pickupable holdingObject;
     [HideInInspector] public Slidable pushingObject;
+    [HideInInspector] public List<Imitator> imitators = new();
 
     private void Update() {
         // Cast a ray from the camera to where the player is looking "interactDistance" away.
@@ -38,6 +40,10 @@ public class PlayerInteractions : MonoBehaviour {
 
             if (pushingObject != null) {
                 pushingObject = null;
+            }
+
+            if (imitators.Count > 0) {
+                imitators.Clear();
             }
         }
     }

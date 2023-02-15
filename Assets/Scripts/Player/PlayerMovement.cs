@@ -44,7 +44,14 @@ public class PlayerMovement : MonoBehaviour {
             moveDirection.y += Physics.gravity.y * Time.deltaTime;
         }
 
-        // Move the controller
+        // Move the controller and imitators if there are any
         if (characterController.enabled) characterController.Move(moveDirection * Time.deltaTime);
+
+        // If there are any active imitators, imitate the input.
+        if (GetComponent<PlayerInteractions>().imitators.Count > 0) {
+            foreach(Imitator imitator in GetComponent<PlayerInteractions>().imitators) {
+                imitator.OnImitateMovement(moveDirection);
+            }
+        }
     }
 }

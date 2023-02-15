@@ -15,20 +15,28 @@ public class UIManager : MonoBehaviour {
 
     // Toggles the interaction UI if it hasn't been done so already.
     public void ToggleInteractionUI(PlayerInteractions player, IInteractable interactable) {
-        // Disables UI if the player is holding something already
-        if (interactable != null && interactable.GetType() == typeof(Pickupable) && player.holdingObject != null) {
-            if (interactUI.activeSelf) {
-                interactUI.SetActive(false);
+        if (interactable != null) {
+            // Disables UI if the player is holding something already
+            if (interactable.GetType() == typeof(Pickupable) && player.holdingObject != null) {
+                if (interactUI.activeSelf) {
+                    interactUI.SetActive(false);
+                }
+                return;
             }
-            return;
-        }
-
-        // Disables UI if the player is pushing something already
-        if (interactable != null && interactable.GetType() == typeof(Slidable) && player.pushingObject != null) {
-            if (interactUI.activeSelf) {
-                interactUI.SetActive(false);
+            // Disables UI if the player is pushing something already
+            else if (interactable.GetType() == typeof(Slidable) && player.pushingObject != null) {
+                if (interactUI.activeSelf) {
+                    interactUI.SetActive(false);
+                }
+                return;
             }
-            return;
+            // Disables UI if the player is pushing something already
+            else if (interactable.GetType() == typeof(Imitator) && player.imitators.Contains((Imitator)interactable)) {
+                if (interactUI.activeSelf) {
+                    interactUI.SetActive(false);
+                }
+                return;
+            }
         }
 
         if (interactUI.activeSelf != (interactable != null)) {
