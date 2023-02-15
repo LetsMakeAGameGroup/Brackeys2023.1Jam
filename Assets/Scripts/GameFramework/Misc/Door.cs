@@ -8,12 +8,18 @@ public class Door : MonoBehaviour, IPuzzleSuccessReceptor
 
     public void OnPuzzleSuccess()
     {
-        ToggleDoor();
+        ToggleDoor(false);
     }
 
-    void ToggleDoor() 
+    public void OnPuzzleFailure()
     {
-        isClosed = !isClosed;
+        ToggleDoor(true);
+    }
+
+
+    void ToggleDoor(bool newState) 
+    {
+        isClosed = newState;
 
         //Run door open/close animation or disable
         gameObject.SetActive(isClosed);

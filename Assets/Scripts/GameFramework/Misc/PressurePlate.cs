@@ -5,7 +5,7 @@ using UnityEngine;
 public class PressurePlate : Subject
 {
     public bool canBeToggle = true;
-    bool beingPressed;
+    public bool beingPressed;
 
     public LayerMask layerMask;
     public float pressurePlateDetectHeight = .25f;
@@ -16,13 +16,23 @@ public class PressurePlate : Subject
         {
             NotifyListener();
             AnimatePlate(true);
+
+            if (!beingPressed) 
+            {
+                beingPressed = true;
+            }
         }
         else 
         {
             if (canBeToggle)
             {
                 Reset();
-                AnimatePlate(false);
+
+                if (beingPressed)
+                {
+                    AnimatePlate(false);
+                    beingPressed = false;
+                }
             }
         }
     }

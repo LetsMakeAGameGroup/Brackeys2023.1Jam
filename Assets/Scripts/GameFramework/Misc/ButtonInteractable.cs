@@ -2,12 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInteractable 
-{
-    public void OnInteract();
-}
-
-public class ButtonInteractable : Subject, IInteractable
+public class ButtonInteractable : Subject
 {
     public void OnInteract()
     {

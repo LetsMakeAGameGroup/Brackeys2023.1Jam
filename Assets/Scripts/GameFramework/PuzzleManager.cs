@@ -5,24 +5,51 @@ using UnityEngine;
 public interface IPuzzleSuccessReceptor 
 {
     public void OnPuzzleSuccess();
+    public void OnPuzzleFailure();
 }
 
 public class PuzzleManager : Listener
 {
     public GameObject PuzzleSuccessReceiver;
+    bool puzzleCompleted;
 
-    public void OnPuzzleComplete() 
+    public void OnPuzzleComplete()
     {
-        Debug.Log("Puzzle Completed");
-
-        if (PuzzleSuccessReceiver)
+        if (!puzzleCompleted)
         {
-            IPuzzleSuccessReceptor receptor = PuzzleSuccessReceiver.GetComponent<IPuzzleSuccessReceptor>();
+            Debug.Log("Puzzle Completed");
 
-            if (receptor != null)
+            if (PuzzleSuccessReceiver)
             {
-                receptor.OnPuzzleSuccess();
+                IPuzzleSuccessReceptor receptor = PuzzleSuccessReceiver.GetComponent<IPuzzleSuccessReceptor>();
+
+                if (receptor != null)
+                {
+                    receptor.OnPuzzleSuccess();
+                }
             }
+
+            puzzleCompleted = true;
+        }
+    }
+
+    void OnPuzzleFailure() 
+    {
+        if (puzzleCompleted)
+        {
+            Debug.Log("Puzzle Resetted");
+
+            if (PuzzleSuccessReceiver)
+            {
+                IPuzzleSuccessReceptor receptor = PuzzleSuccessReceiver.GetComponent<IPuzzleSuccessReceptor>();
+
+                if (receptor != null)
+                {
+                    receptor.OnPuzzleFailure();
+                }
+            }
+
+            puzzleCompleted = false;
         }
     }
 
@@ -30,7 +57,7 @@ public class PuzzleManager : Listener
     {
         int ammountOfCompleted = 0;
 
-        for (int i = 0; i < subjects.Count; i++) 
+        for (int i = 0; i < subjects.Count; i++)
         {
             if (subjects[i].compleated)
             {
@@ -38,11 +65,13 @@ public class PuzzleManager : Listener
             }
         }
 
-        Debug.Log(ammountOfCompleted + " vs " + subjects.Count);
-
         if (ammountOfCompleted == subjects.Count)
         {
             OnPuzzleComplete();
+        }
+        else 
+        {
+            OnPuzzleFailure();
         }
     }
 
