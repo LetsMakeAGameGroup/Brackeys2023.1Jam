@@ -23,6 +23,14 @@ public class UIManager : MonoBehaviour {
             return;
         }
 
+        // Disables UI if the player is pushing something already
+        if (interactable != null && interactable.GetType() == typeof(Slidable) && player.pushingObject != null) {
+            if (interactUI.activeSelf) {
+                interactUI.SetActive(false);
+            }
+            return;
+        }
+
         if (interactUI.activeSelf != (interactable != null)) {
             interactUI.SetActive((interactable != null));
         }

@@ -7,6 +7,7 @@ public class PlayerInteractions : MonoBehaviour {
     [SerializeField] private float interactDistance = 2f;
 
     [HideInInspector] public Pickupable holdingObject;
+    [HideInInspector] public Slidable pushingObject;
 
     private void Update() {
         // Cast a ray from the camera to where the player is looking "interactDistance" away.
@@ -28,11 +29,15 @@ public class PlayerInteractions : MonoBehaviour {
             UIManager.Instance.ToggleInteractionUI(this, null);
         }
 
-        // Check if player is trying to drop holding object
+        // Check if player is trying to throw/stop pushing object
         if (Input.GetButtonDown("Fire1")) {
             if (holdingObject != null) {
                 holdingObject.OnThrow(this);
                 holdingObject = null;
+            }
+
+            if (pushingObject != null) {
+                pushingObject = null;
             }
         }
     }

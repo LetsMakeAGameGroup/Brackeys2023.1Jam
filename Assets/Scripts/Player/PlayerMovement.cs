@@ -16,6 +16,12 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
+        // Check if in a state for pushing an object
+        if (GetComponent<PlayerInteractions>().pushingObject != null) {
+            GetComponent<PlayerInteractions>().pushingObject.OnPush(GetComponent<PlayerInteractions>(), Input.GetAxis("Vertical"));
+            return;
+        }
+
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
