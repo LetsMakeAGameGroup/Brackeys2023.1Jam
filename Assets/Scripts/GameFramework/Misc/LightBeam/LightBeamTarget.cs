@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightBeamTarget : LightBeamBase
+public interface IBeamReceptor 
 {
-    public override void OnLightBeamReceive(Vector3 lightBeamHitPoint, Vector3 directionOfLightBeam, Vector3 normalFace)
+    void OnBeamHit();
+    void OnBeamMiss();
+}
+
+public class LightBeamTarget : Subject, IBeamReceptor
+{
+    public void OnBeamHit()
     {
-        //throw new System.NotImplementedException();
+        NotifyListener();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void OnBeamMiss()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("ojsfd");
+        Reset();
     }
 }

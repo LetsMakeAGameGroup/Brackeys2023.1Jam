@@ -28,6 +28,8 @@ public abstract class Subject : MonoBehaviour
     public void Reset()
     {
         compleated = false;
+
+        listener.ReceiveMessage(this);
     }
 
     public virtual void OnDrawGizmos()
