@@ -31,7 +31,7 @@ public class PlayerInteractions : MonoBehaviour {
         // Check if player is trying to drop holding object
         if (Input.GetButtonDown("Fire1")) {
             if (holdingObject != null) {
-                holdingObject.OnDrop(this);
+                holdingObject.OnThrow(this);
                 holdingObject = null;
             }
         }
