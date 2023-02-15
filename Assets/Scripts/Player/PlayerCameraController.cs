@@ -21,4 +21,8 @@ public class PlayerCameraController : MonoBehaviour {
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * cameraSens, 0);
     }
+
+    public Camera GetPlayerCamera() {
+        return playerCamera.GetComponent<Camera>();
+    }
 }
