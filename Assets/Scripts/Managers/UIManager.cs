@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour {
@@ -16,9 +14,17 @@ public class UIManager : MonoBehaviour {
     }
 
     // Toggles the interaction UI if it hasn't been done so already.
-    public void ToggleInteractionUI(bool toggle) {
-        if (interactUI.activeSelf != toggle) {
-            interactUI.SetActive(toggle);
+    public void ToggleInteractionUI(PlayerInteractions player, Interactable interactable) {
+        // Disables UI if the player is holding something already
+        if (interactable != null && interactable.GetType() == typeof(Pickupable) && player.IsHoldingObject()) {
+            if (interactUI.activeSelf) {
+                interactUI.SetActive(false);
+            }
+            return;
+        }
+
+        if (interactUI.activeSelf != (interactable != null)) {
+            interactUI.SetActive((interactable != null));
         }
     }
 }
