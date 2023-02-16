@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour {
     public static UIManager Instance { get; private set; }
 
     [SerializeField] private GameObject interactUI;
+    [SerializeField] private TextMeshProUGUI dayText;
 
     private void Awake() {
         if (Instance != null & Instance != this) {
@@ -42,5 +44,10 @@ public class UIManager : MonoBehaviour {
         if (interactUI.activeSelf != (interactable != null)) {
             interactUI.SetActive((interactable != null));
         }
+    }
+
+    // Updates the day text to represent the current day.
+    public void UpdateDayText(int day) {
+        dayText.text = "Day " + day.ToString();
     }
 }

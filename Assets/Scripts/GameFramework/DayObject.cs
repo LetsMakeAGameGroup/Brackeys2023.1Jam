@@ -1,11 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DayObject : MonoBehaviour {
-    public bool firstDay = true;
-    public bool secondDay = true;
-    public bool thirdDay = true;
-    public bool fourthDay = true;
-    public bool fifthDay = true;
+    [SerializeField] private bool firstDay = true;
+    [SerializeField] private bool secondDay = true;
+    [SerializeField] private bool thirdDay = true;
+    [SerializeField] private bool fourthDay = true;
+    [SerializeField] private bool fifthDay = true;
+
+    public bool IsActiveOnDay(int day) {
+        switch (day) {
+            case 1:
+                return firstDay;
+            case 2:
+                return secondDay;
+            case 3:
+                return thirdDay;
+            case 4:
+                return fourthDay;
+            case 5:
+                return fifthDay;
+            default:
+                Debug.LogError("Calling IsActiveOnDay on a day that is not setup.", transform);
+                return false;
+        }
+    }
 }
