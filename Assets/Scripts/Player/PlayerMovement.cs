@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     // Player variable settings
     [SerializeField] private float walkSpeed = 6f;
+    [SerializeField] private float sprintSpeed = 8f;
     [SerializeField] private float jumpSpeed = 6f;
 
     // References
@@ -26,8 +27,8 @@ public class PlayerMovement : MonoBehaviour {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        float curSpeedX = walkSpeed * Input.GetAxis("Vertical");
-        float curSpeedY = walkSpeed * Input.GetAxis("Horizontal");
+        float curSpeedX = (Input.GetButton("Sprint") ? sprintSpeed : walkSpeed) * Input.GetAxis("Vertical");
+        float curSpeedY = (Input.GetButton("Sprint") ? sprintSpeed : walkSpeed) * Input.GetAxis("Horizontal");
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
