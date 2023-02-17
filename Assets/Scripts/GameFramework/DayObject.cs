@@ -24,4 +24,27 @@ public class DayObject : MonoBehaviour {
                 return false;
         }
     }
+
+    public void ChangeDayToggle(int day, bool toggle) {
+        switch (day) {
+            case 1:
+                firstDay = toggle;
+                break;
+            case 2:
+                secondDay = toggle;
+                break;
+            case 3:
+                thirdDay = toggle;
+                break;
+            case 4:
+                fourthDay = toggle;
+                break;
+            case 5:
+                fifthDay = toggle;
+                break;
+            default:
+                Debug.LogError("Calling ChangeDayToggle on a day that is not setup.", transform);
+                break;
+        }
+    }
 }

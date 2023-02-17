@@ -7,6 +7,8 @@ using UnityEngine;
 public class DayManager : MonoBehaviour {
     public static DayManager Instance { get; private set; }
 
+    [SerializeField] private GameObject staticObjectArea;
+    [SerializeField] private bool areaIsStatic = false;
     [SerializeField] private float sleepTime = 5f;
 
     private readonly int days = 5;  // Not serialized because changing this would also need to change how DayObject script works.
@@ -43,14 +45,21 @@ public class DayManager : MonoBehaviour {
 
     // Increases the day by one and wraps around when on the last day.
     public IEnumerator OnPlayerAwake() {
+        int previousDay = currentDay;
         currentDay = (currentDay % days) + 1;
 
         foreach (GameObject dayObject in dayObjects) {
-            if (dayObject.activeSelf && !dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay)) {
-                dayObject.SetActive(false);
-            }
-            else if (!dayObject.activeSelf && dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay)) {
-                dayObject.SetActive(true);
+            if (areaIsStatic && staticObjectArea.GetComponent<Collider>().bounds.Contains(dayObject.transform.position)) {
+                if (!dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay)) {;
+                    dayObject.GetComponent<DayObject>().ChangeDayToggle(previousDay, false);
+                    dayObject.GetComponent<DayObject>().ChangeDayToggle(currentDay, true);
+                }
+            } else {
+                if (dayObject.activeSelf && !dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay)) {
+                    dayObject.SetActive(false);
+                } else if (!dayObject.activeSelf && dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay)) {
+                    dayObject.SetActive(true);
+                }
             }
         }
 
