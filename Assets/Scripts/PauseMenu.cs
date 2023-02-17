@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     public bool isPaused;
     public GameObject PauseMenuUI;
+    public GameObject OptionsMenu;
 
     void Awake()
     {
@@ -45,6 +46,19 @@ public class PauseMenu : MonoBehaviour
     {
         TogglePause();
     }
+
+    public void OpenPauseMenu()
+    {
+        PauseMenuUI.SetActive(true);
+        OptionsMenu.SetActive(false);
+    }
+
+    public void OpenOptionsMenu() 
+    {
+        PauseMenuUI.SetActive(false);
+        OptionsMenu.SetActive(true);
+    }
+
 
     public void BackToMenu()
     {
