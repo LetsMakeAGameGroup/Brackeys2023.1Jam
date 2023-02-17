@@ -23,12 +23,6 @@ public class DayManager : MonoBehaviour {
         IterateDay();
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.F)) {
-            IterateDay();
-        }
-    }
-
     // Increases the day by one and wraps around when on the last day.
     public void IterateDay() {
         currentDay = (currentDay % days) + 1;
