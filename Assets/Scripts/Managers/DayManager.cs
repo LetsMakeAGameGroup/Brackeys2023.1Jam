@@ -10,6 +10,8 @@ public class DayManager : MonoBehaviour {
     [SerializeField] private GameObject staticObjectArea;
     [SerializeField] private bool areaIsStatic = false;
     [SerializeField] private float sleepTransition = 1f;
+    [SerializeField] private MeshRenderer wallMuralRend;
+    [SerializeField] private Material[] wallMaterial;  // Element 0 will represent day 1 and element 4 represents day 5.
 
     private readonly int days = 5;  // Not serialized because changing this would also need to change how DayObject script works.
     private int currentDay = 0;
@@ -50,6 +52,12 @@ public class DayManager : MonoBehaviour {
         int previousDay = currentDay;
         if (day == -1) currentDay = (currentDay % days) + 1;
         else currentDay = day;
+
+        if (wallMaterial[currentDay - 1] == null) {
+            Debug.LogError($"Attempting to change wallMuralRend's material to wallMaterial[{currentDay - 1}] when it doesn't exist.", transform);
+        } else {
+            wallMuralRend.material = wallMaterial[currentDay - 1];
+        }
 
         foreach (GameObject dayObject in dayObjects) {
             if (areaIsStatic && staticObjectArea.GetComponent<Collider>().bounds.Contains(dayObject.transform.position)) {
