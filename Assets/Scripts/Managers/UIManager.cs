@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private RectTransform topEyelidUI;
     [SerializeField] private RectTransform botEyelidUI;
     [SerializeField] private float eyeSpeed = 1f;
+    [SerializeField] private GameObject winMenu;
 
     private Vector2 topEyelidOrigin;
     private Vector2 botEyelidOrigin;
@@ -88,5 +89,12 @@ public class UIManager : MonoBehaviour {
             botEyelidUI.anchoredPosition = Vector2.MoveTowards(botEyelidUI.anchoredPosition, botEyelidOrigin, eyeSpeed * Time.deltaTime);
             yield return null;
         }
+    }
+
+    public void EnableWinMenu() {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        winMenu.SetActive(true);
     }
 }
