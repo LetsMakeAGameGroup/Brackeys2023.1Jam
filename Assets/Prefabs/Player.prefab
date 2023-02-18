@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 6
+  sprintSpeed: 10
   jumpSpeed: 6
   characterController: {fileID: 0}
 --- !u!114 &7078558874922188745
