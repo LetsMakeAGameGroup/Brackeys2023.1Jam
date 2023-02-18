@@ -26,6 +26,11 @@ public class PuzzleManager : Listener
                 if (receptor != null)
                 {
                     receptor.OnPuzzleSuccess();
+
+                    if (AudioManager.Instance) 
+                    {
+                        AudioManager.Instance.PlayOnPuzzleComplete();
+                    }
                 }
             }
 

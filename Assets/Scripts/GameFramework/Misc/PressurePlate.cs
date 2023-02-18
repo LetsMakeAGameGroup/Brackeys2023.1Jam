@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PressurePlate : Subject
 {
+    AudioSource audioSource;
     public bool canBeToggle = true;
     public bool beingPressed;
 
     public LayerMask layerMask;
     public float pressurePlateDetectHeight = .25f;
+
+    public void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void FixedUpdate()
     {
@@ -16,6 +22,7 @@ public class PressurePlate : Subject
         {
             NotifyListener();
             AnimatePlate(true);
+            audioSource.Play();
 
             if (!beingPressed) 
             {
@@ -32,6 +39,7 @@ public class PressurePlate : Subject
                 {
                     AnimatePlate(false);
                     beingPressed = false;
+                    audioSource.Play();
                 }
             }
         }

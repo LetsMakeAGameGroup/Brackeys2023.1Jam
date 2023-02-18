@@ -1056,6 +1056,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8acf46034e3dcde4eb9ac80dd2886d71, type: 3}
+--- !u!114 &101864246642746244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5453216278269430902, guid: 8acf46034e3dcde4eb9ac80dd2886d71,
+    type: 3}
+  m_PrefabInstance: {fileID: 5387523061330522098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &927241003842251046 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5051468033699415764, guid: 8acf46034e3dcde4eb9ac80dd2886d71,
@@ -1068,9 +1080,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5387523061330522098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7838057714533574527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2738765098613737613, guid: 8acf46034e3dcde4eb9ac80dd2886d71,
+    type: 3}
+  m_PrefabInstance: {fileID: 5387523061330522098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8627471946481177965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4431159027316832927, guid: 8acf46034e3dcde4eb9ac80dd2886d71,
     type: 3}
   m_PrefabInstance: {fileID: 5387523061330522098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8591733502383341471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627471946481177965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5f6cde08be682449224139e63fd713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundVolumenSlider: {fileID: 101864246642746244}
+  FXVolumenSlider: {fileID: 7838057714533574527}
