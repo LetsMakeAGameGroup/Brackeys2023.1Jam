@@ -9,7 +9,7 @@ public class DayManager : MonoBehaviour {
 
     [SerializeField] private GameObject staticObjectArea;
     [SerializeField] private bool areaIsStatic = false;
-    [SerializeField] private float sleepTime = 5f;
+    [SerializeField] private float sleepTransition = 1f;
 
     private readonly int days = 5;  // Not serialized because changing this would also need to change how DayObject script works.
     private int currentDay = 0;
@@ -30,7 +30,7 @@ public class DayManager : MonoBehaviour {
     }
 
     private IEnumerator OnStartGame() {
-        yield return new WaitForSeconds(sleepTime);
+        yield return new WaitForSeconds(sleepTransition);
 
         StartCoroutine(OnPlayerAwake());
     }
@@ -38,15 +38,18 @@ public class DayManager : MonoBehaviour {
     public IEnumerator OnPlayerSleep() {
         yield return StartCoroutine(UIManager.Instance.CloseEyesUI());
 
-        yield return new WaitForSeconds(sleepTime);
+        yield return new WaitForSeconds(sleepTransition);
 
-        StartCoroutine(OnPlayerAwake());
+        UIManager.Instance.EnableDaySelect();
     }
 
     // Increases the day by one and wraps around when on the last day.
-    public IEnumerator OnPlayerAwake() {
+    public IEnumerator OnPlayerAwake(int day = -1) {
+        yield return new WaitForSeconds(sleepTransition);
+
         int previousDay = currentDay;
-        currentDay = (currentDay % days) + 1;
+        if (day == -1) currentDay = (currentDay % days) + 1;
+        else currentDay = day;
 
         foreach (GameObject dayObject in dayObjects) {
             if (areaIsStatic && staticObjectArea.GetComponent<Collider>().bounds.Contains(dayObject.transform.position)) {
