@@ -54,5 +54,10 @@ public class PlayerMovement : MonoBehaviour {
                 imitator.OnImitateMovement(moveDirection);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.P)) 
+        {
+            if(PauseMenu.Instance) PauseMenu.Instance.TogglePause();
+        }
     }
 }

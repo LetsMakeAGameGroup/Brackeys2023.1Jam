@@ -4,32 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-[CreateAssetMenu(fileName = "OptionsData", menuName = "ScriptableObjects/OptionsData", order = 1)]
-public class OptionsData : ScriptableObject 
-{
-    public float currentMusicVolume;
-    public float currentFXVolume;
-}
-
 public class OptionsSettings : MonoBehaviour
 {
-    public AudioMixer audioMixer;
     public Slider SoundVolumenSlider;
     public Slider FXVolumenSlider;
-
 
     private void Start()
     {
         if (PlayerPrefs.HasKey("MusicVolume"))
         {
             SoundVolumenSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-            audioMixer.SetFloat("MusicVolume", Mathf.Log10(SoundVolumenSlider.value) * 20);
+            SetMusicVolume(SoundVolumenSlider.value);
         }
 
         if (PlayerPrefs.HasKey("FXVolume"))
         {
             FXVolumenSlider.value = PlayerPrefs.GetFloat("FXVolume");
-            audioMixer.SetFloat("FXVolume", Mathf.Log10(FXVolumenSlider.value) * 20);
+            SetFXVolume(FXVolumenSlider.value);
+        }
+
+        if (AudioManager.Instance) 
+        {
+            SoundVolumenSlider.onValueChanged.AddListener(SetMusicVolume);
+            FXVolumenSlider.onValueChanged.AddListener(SetFXVolume);
         }
     }
 
@@ -38,25 +35,48 @@ public class OptionsSettings : MonoBehaviour
         if (PlayerPrefs.HasKey("MusicVolume"))
         {
             SoundVolumenSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-            audioMixer.SetFloat("MusicVolume", Mathf.Log10(SoundVolumenSlider.value) * 20);
+            SetMusicVolume(SoundVolumenSlider.value);
         }
 
         if (PlayerPrefs.HasKey("FXVolume"))
         {
             FXVolumenSlider.value = PlayerPrefs.GetFloat("FXVolume");
-            audioMixer.SetFloat("FXVolume", Mathf.Log10(FXVolumenSlider.value) * 20);
+            SetFXVolume(FXVolumenSlider.value);
+        }
+
+        if (AudioManager.Instance)
+        {
+            SoundVolumenSlider.onValueChanged.AddListener(AudioManager.Instance.SetMusicVolumen);
+            FXVolumenSlider.onValueChanged.AddListener(AudioManager.Instance.SetSFXVolumen);
         }
     }
 
     public void SetMusicVolume(float volume)
     {
         PlayerPrefs.SetFloat("MusicVolume", volume);
-        audioMixer.SetFloat("MusicVolume", Mathf.Log10(SoundVolumenSlider.value) * 20);
+
+        if (AudioManager.Instance) 
+        {
+            AudioManager.Instance.SetMusicVolumen(volume);
+        }
     }
 
     public void SetFXVolume(float volume)
     {
         PlayerPrefs.SetFloat("FXVolume", volume);
-        audioMixer.SetFloat("FXVolume", Mathf.Log10(FXVolumenSlider.value) * 20);
+
+        if (AudioManager.Instance)
+        {
+            AudioManager.Instance.SetSFXVolumen(volume);
+        }
+    }
+
+    public void OnDisable()
+    {
+        if (AudioManager.Instance)
+        {
+            SoundVolumenSlider.onValueChanged.RemoveAllListeners();
+            FXVolumenSlider.onValueChanged.RemoveAllListeners();
+        }
     }
 }

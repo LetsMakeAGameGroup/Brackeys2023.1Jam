@@ -34,11 +34,11 @@ public class PauseMenu : MonoBehaviour
 
         if (isPaused)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.None;
         }
         else 
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

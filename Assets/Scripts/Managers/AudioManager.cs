@@ -7,6 +7,15 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource ambienceSource;
 
+    public float MusicVolumen;
+    public float SFXVolumen;
+
+    public delegate void OnMusicVolumenChange(float newVolumen);
+    public OnMusicVolumenChange onMusicVolumenChanged;
+
+    public delegate void OnSFXVolumenChange(float newVolumen);
+    public OnSFXVolumenChange onSFXVolumenChanged;
+
     private void Awake() {
         if (Instance != null & Instance != this) {
             Destroy(this);
@@ -16,6 +25,29 @@ public class AudioManager : MonoBehaviour {
 
         PlayMusic();
         PlayAmbience();
+
+        if (PlayerPrefs.HasKey("MusicVolume"))
+        {
+            SetMusicVolumen(PlayerPrefs.GetFloat("MusicVolume"));
+        }
+
+        if (PlayerPrefs.HasKey("FXVolume"))
+        {
+            SetSFXVolumen(PlayerPrefs.GetFloat("FXVolume"));
+        }
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("MusicVolume"))
+        {
+            SetMusicVolumen(PlayerPrefs.GetFloat("MusicVolume"));
+        }
+
+        if (PlayerPrefs.HasKey("FXVolume"))
+        {
+            SetSFXVolumen(PlayerPrefs.GetFloat("FXVolume"));
+        }
     }
 
     public void PlayMusic() {
@@ -36,5 +68,28 @@ public class AudioManager : MonoBehaviour {
 
         ambienceSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
         ambienceSource.Play();
+    }
+
+    public void SetMusicVolumen(float volumen) 
+    {
+        MusicVolumen = volumen;
+
+        if (onMusicVolumenChanged != null) 
+        {
+            onMusicVolumenChanged(volumen);
+        }
+
+        musicSource.volume = volumen;
+    }
+    public void SetSFXVolumen(float volumen) 
+    {
+        SFXVolumen = volumen;
+
+        if (onSFXVolumenChanged != null)
+        {
+            onSFXVolumenChanged(volumen);
+        }
+
+        ambienceSource.volume = volumen;
     }
 }
