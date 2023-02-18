@@ -6,7 +6,6 @@ public class UIManager : MonoBehaviour {
     public static UIManager Instance { get; private set; }
 
     [SerializeField] private GameObject interactUI;
-    [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private RectTransform topEyelidUI;
     [SerializeField] private RectTransform botEyelidUI;
     [SerializeField] private GameObject daySelectUI;
@@ -66,11 +65,6 @@ public class UIManager : MonoBehaviour {
         if (interactUI.activeSelf != (interactable != null)) {
             interactUI.SetActive((interactable != null));
         }
-    }
-
-    // Updates the day text to represent the current day.
-    public void UpdateDayText(int day) {
-        dayText.text = "Day " + day.ToString();
     }
 
     // Closes the player's eyes
