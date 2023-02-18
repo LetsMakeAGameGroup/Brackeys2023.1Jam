@@ -1,0 +1,817 @@
+fileFormatVersion: 2
+guid: 9ec48a03116d5ee4c80df5cb42553a86
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec64d3806cf3fc4e8ea19cea6029ac0
+      internalID: -1773744604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 480
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513f09dd31ced4448b696e42aa51da79
+      internalID: 899960592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 480
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca13b7dfba53d304588bf2d4812ee2ef
+      internalID: -269534642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 480
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002e87ca7a38eff48a410a5cf20206a1
+      internalID: 176076696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 480
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01800e353201274a934ba9797b06aa1
+      internalID: -1522279059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3216545cf323b4fbeecb55340c0a54
+      internalID: 1431429839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 400
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ae66e93076d8a4aac384799a19a876
+      internalID: -998987348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 400
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a638314ebd9105e4ca1b30db3cfc9631
+      internalID: -2135238154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 400
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f93e5dea2cad64b957ddfb23aba0ca
+      internalID: 1694402681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 400
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472d87e95f23f6440b7e39ac2da6a91d
+      internalID: -1478497445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93c254434c8d0f48a267992832946ae
+      internalID: -1216315936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 320
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2fa26552a15304c9d4d0e4643fe627
+      internalID: 1301276286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 320
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3582a7fbe46f4045a083462b1a590f5
+      internalID: 1136301368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 320
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50858998ac7d75648a4f6271ee0cd370
+      internalID: -1172124907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 320
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6957b225348fb448958af0699080324
+      internalID: -1310318693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8bbe87c5dc0a0f4e8a19bea2302933c
+      internalID: 795821922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 240
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7de3347d4d6bb34f80f22ea1f220ee3
+      internalID: -2062555567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 240
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab21403dae65934ba3223f2d0564565
+      internalID: -1792771443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 240
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61f4c8a2c11d7a4ebbec37d9d6b2005
+      internalID: -1661220895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 240
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec39aec41227e84f8efbca71e540dc2
+      internalID: 1400933269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf5a97b40bccbd47977eb8a431537d9
+      internalID: -1147913459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 160
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958246c0844f29241b3baf3fdb7eea5b
+      internalID: -203846843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 160
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57101a6965282745883297855bbcc1f
+      internalID: -512404758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 160
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70d08a1381bd174dbd5a0c9206749af
+      internalID: -2115056257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 160
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781d8600f4c653c43a495a3881c9d93f
+      internalID: -1127720989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2508392a501f9478a1a2a0330d3ced
+      internalID: 2104534534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 80
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a151e43aa263a45ac8468941cf98f5
+      internalID: -1905220573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 80
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451be5d2ab85d7248be74cb31faf8367
+      internalID: 1820965175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 80
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610bba4ad1e48f845833e2525085fbce
+      internalID: 1347158975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 80
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff9c56ebf256494f8016ad80e6f5f48
+      internalID: -232472662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButtonSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 295
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961c7296986d02a47bfd99ea1c3b38e7
+      internalID: -1460349410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BigButtonSpriteSheet_4: -1522279059
+      BigButtonSpriteSheet_11: 1301276286
+      BigButtonSpriteSheet_13: -1172124907
+      BigButtonSpriteSheet_5: 1431429839
+      BigButtonSpriteSheet_1: 899960592
+      BigButtonSpriteSheet_24: -1127720989
+      BigButtonSpriteSheet_20: -1147913459
+      BigButtonSpriteSheet_10: -1216315936
+      BigButtonSpriteSheet_25: 2104534534
+      BigButtonSpriteSheet_14: -1310318693
+      BigButtonSpriteSheet_17: -1792771443
+      BigButtonSpriteSheet_9: -1478497445
+      BigButtonSpriteSheet_29: -232472662
+      BigButtonSpriteSheet_2: -269534642
+      BigButtonSpriteSheet_6: -998987348
+      BigButtonSpriteSheet_7: -2135238154
+      BigButtonSpriteSheet_21: -203846843
+      BigButtonSpriteSheet_16: -2062555567
+      BigButtonSpriteSheet_18: -1661220895
+      BigButtonSpriteSheet_8: 1694402681
+      BigButtonSpriteSheet_27: 1820965175
+      BigButtonSpriteSheet_12: 1136301368
+      BigButtonSpriteSheet_26: -1905220573
+      BigButtonSpriteSheet_22: -512404758
+      BigButtonSpriteSheet_3: 176076696
+      BigButtonSpriteSheet_15: 795821922
+      BigButtonSpriteSheet_0: -1773744604
+      BigButtonSpriteSheet_30: -1460349410
+      BigButtonSpriteSheet_19: 1400933269
+      BigButtonSpriteSheet_23: -2115056257
+      BigButtonSpriteSheet_28: 1347158975
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
