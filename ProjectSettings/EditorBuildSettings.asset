@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: ee90d92dd23f7b2479d0b375803740c7
   - enabled: 1
-    path: Assets/Scenes/PuzzleTesting.unity
+    path: Assets/Scenes/Testing/PuzzleTesting.unity
     guid: f956a880f3b0e0d468b6bdc95e129c7e
   m_configObjects: {}
