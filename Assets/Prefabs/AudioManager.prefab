@@ -46,7 +46,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -143,10 +143,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67523245b5adbce49a667f28347bbcd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OneShotSource: {fileID: 0}
   musicSource: {fileID: 3309464399484591073}
   ambienceSource: {fileID: 3309464400182150690}
   MusicVolumen: 0
   SFXVolumen: 0
+  mainMenuMusic: {fileID: 0}
+  onPuzzleComplete:
+  - {fileID: 8300000, guid: c2f6f43ef8b53bd4d8f36e9c18730292, type: 3}
+  - {fileID: 8300000, guid: 5fb0cae71d8567f46ab45b1a01f689c2, type: 3}
+  levelMusic:
+  - {fileID: 8300000, guid: 20d07803c61203346b977a550706f42b, type: 3}
+  - {fileID: 8300000, guid: d9d41b00ceeb971419396ae63972cad7, type: 3}
+  - {fileID: 8300000, guid: d527ff46b9f28fc43bbf7bb3eef9797e, type: 3}
+  - {fileID: 8300000, guid: 0d691ef5b88d09b48bbb3068bf2579db, type: 3}
 --- !u!1 &3309464399484591078
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour {
+
+    AudioSource m_AudioSource;
     // Player variable settings
     [SerializeField] private float walkSpeed = 6f;
     [SerializeField] private float sprintSpeed = 8f;
@@ -14,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Awake() {
         characterController = GetComponent<CharacterController>();
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -47,6 +50,21 @@ public class PlayerMovement : MonoBehaviour {
 
         // Move the controller and imitators if there are any
         if (characterController.enabled) characterController.Move(moveDirection * Time.deltaTime);
+
+        if ((moveDirection.x > 0 || moveDirection.z > 0) && characterController.isGrounded)
+        {
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
+        }
+        else 
+        {
+            if (m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Stop();
+            }
+        }
 
         // If there are any active imitators, imitate the input.
         if (GetComponent<PlayerInteractions>().imitators.Count > 0) {

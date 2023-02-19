@@ -39,6 +39,7 @@ public class PlayerInteractions : MonoBehaviour {
             }
 
             if (pushingObject != null) {
+                pushingObject.GetComponent<AudioSource>().Stop();
                 pushingObject = null;
             }
 

@@ -4,11 +4,16 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
     public static AudioManager Instance { get; private set; }
 
+    [SerializeField] private AudioSource OneShotSource;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource ambienceSource;
 
     public float MusicVolumen;
     public float SFXVolumen;
+
+    public AudioClip mainMenuMusic;
+    public AudioClip[] onPuzzleComplete = new AudioClip[2];
+    public AudioClip[] levelMusic = new AudioClip[5];
 
     public delegate void OnMusicVolumenChange(float newVolumen);
     public OnMusicVolumenChange onMusicVolumenChanged;
@@ -23,18 +28,9 @@ public class AudioManager : MonoBehaviour {
             Instance = this;
         }
 
-        PlayMusic();
         PlayAmbience();
 
-        if (PlayerPrefs.HasKey("MusicVolume"))
-        {
-            SetMusicVolumen(PlayerPrefs.GetFloat("MusicVolume"));
-        }
-
-        if (PlayerPrefs.HasKey("FXVolume"))
-        {
-            SetSFXVolumen(PlayerPrefs.GetFloat("FXVolume"));
-        }
+        OneShotSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -50,13 +46,26 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    public void PlayMusic() {
+    public void PlayMusic(AudioClip musicToPlay) {
         if (!musicSource) {
             Debug.LogError("Trying to play music when an AudioSource has not been set.", transform);
             return;
         }
 
         musicSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
+        musicSource.clip = musicToPlay;
+        musicSource.Play();
+    }
+
+    public void PlayMainMenuMusic()
+    {
+        if (!musicSource)
+        {
+            Debug.LogError("Trying to play music when an AudioSource has not been set.", transform);
+            return;
+        }
+
+        musicSource.clip = mainMenuMusic;
         musicSource.Play();
     }
 
@@ -91,5 +100,13 @@ public class AudioManager : MonoBehaviour {
         }
 
         ambienceSource.volume = volumen;
+    }
+
+    public void PlayOnPuzzleComplete()
+    {
+        int randomNum = Random.Range(0, 1);
+
+        OneShotSource.volume = SFXVolumen;
+        OneShotSource.PlayOneShot(onPuzzleComplete[randomNum]);
     }
 }
