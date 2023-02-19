@@ -91,7 +91,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1196861207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1339,7 +1339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8103116111941882411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1506,7 +1506,6 @@ MonoBehaviour:
   dayText: {fileID: 2465516128679564742}
   topEyelidUI: {fileID: 2071032247}
   botEyelidUI: {fileID: 682679283}
-  daySelectUI: {fileID: 0}
   eyeSpeed: 500
   winMenu: {fileID: 8103116111941882415}
 --- !u!223 &9190223966314270789
@@ -1620,7 +1619,7 @@ PrefabInstance:
     - target: {fileID: 575718387982470926, guid: 8acf46034e3dcde4eb9ac80dd2886d71,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1031115549282147588, guid: 8acf46034e3dcde4eb9ac80dd2886d71,
         type: 3}
@@ -1880,7 +1879,7 @@ PrefabInstance:
     - target: {fileID: 6498944006636907037, guid: 8acf46034e3dcde4eb9ac80dd2886d71,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8411173756119450180, guid: 8acf46034e3dcde4eb9ac80dd2886d71,
         type: 3}
