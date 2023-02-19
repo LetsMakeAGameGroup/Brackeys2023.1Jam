@@ -10,6 +10,7 @@ public class Door : MonoBehaviour, IPuzzleSuccessReceptor
     public bool isClosed = true;
 
     private Coroutine openGate;
+    public float yDelta = 10;
 
     void Awake() 
     {
@@ -43,12 +44,12 @@ public class Door : MonoBehaviour, IPuzzleSuccessReceptor
             if (isClosed)
             {
                 m_AudioSource.Play();
-                openGate = StartCoroutine(OpenCloseGate(4, -10));
+                openGate = StartCoroutine(OpenCloseGate(4, -yDelta));
             }
             else 
             {
                 m_AudioSource.Play();
-                openGate = StartCoroutine(OpenCloseGate(4, 10));
+                openGate = StartCoroutine(OpenCloseGate(4, yDelta));
             }
         }
     }

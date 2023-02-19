@@ -529,6 +529,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 3679875297403403571, guid: 995f18ef4bff05440b87034f70ae433f,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3679875297403403573, guid: 995f18ef4bff05440b87034f70ae433f,
         type: 3}
       propertyPath: m_Pivot.x

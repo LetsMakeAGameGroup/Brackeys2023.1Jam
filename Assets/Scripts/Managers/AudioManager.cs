@@ -46,6 +46,21 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    public void PlayRandomMusic() 
+    {
+        int randomMusicInt = Random.Range(0, levelMusic.Length);
+
+        if (!musicSource)
+        {
+            Debug.LogError("Trying to play music when an AudioSource has not been set.", transform);
+            return;
+        }
+
+        //musicSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
+        musicSource.clip = levelMusic[randomMusicInt];
+        musicSource.Play();
+    }
+
     public void PlayMusic(AudioClip musicToPlay) {
         if (!musicSource) {
             Debug.LogError("Trying to play music when an AudioSource has not been set.", transform);

@@ -54,7 +54,7 @@ public class DayManager : MonoBehaviour {
         }
         if (AudioManager.Instance)
         {
-            AudioManager.Instance.PlayMusic(AudioManager.Instance.levelMusic[currentDay]);
+            AudioManager.Instance.PlayRandomMusic();
         }
 
         yield return new WaitForSeconds(sleepTransition);

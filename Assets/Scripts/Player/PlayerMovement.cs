@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.P)) 
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) 
         {
             if(PauseMenu.Instance) PauseMenu.Instance.TogglePause();
         }
