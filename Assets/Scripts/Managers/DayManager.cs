@@ -42,7 +42,7 @@ public class DayManager : MonoBehaviour {
 
         yield return new WaitForSeconds(sleepTransition);
 
-        UIManager.Instance.EnableDaySelect();
+        DaySelect.Instance.EnableDaySelect();
     }
 
     // Increases the day by one and wraps around when on the last day.
