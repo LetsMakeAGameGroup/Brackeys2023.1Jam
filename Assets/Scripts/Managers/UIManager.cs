@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private RectTransform topEyelidUI;
     [SerializeField] private RectTransform botEyelidUI;
+    [SerializeField] private GameObject daySelectUI;
     [SerializeField] private float eyeSpeed = 1f;
     [SerializeField] private GameObject winMenu;
 
@@ -63,6 +64,11 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    // Updates the day text to represent the current day.
+    public void UpdateDayText(int day) {
+        dayText.text = "Day " + day.ToString();
+    }
+
     // Closes the player's eyes
     public IEnumerator CloseEyesUI() {
         while (topEyelidUI.anchoredPosition != centerTopEyelid) {
@@ -79,6 +85,23 @@ public class UIManager : MonoBehaviour {
             botEyelidUI.anchoredPosition = Vector2.MoveTowards(botEyelidUI.anchoredPosition, botEyelidOrigin, eyeSpeed * Time.deltaTime);
             yield return null;
         }
+    }
+
+    public void EnableDaySelect() {
+        daySelectUI.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    // Select the next day through the daySelectUI.
+    public void SelectDayButton(int day) {
+        daySelectUI.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        StartCoroutine(DayManager.Instance.OnPlayerAwake(day));
     }
 
     public void EnableWinMenu() {
