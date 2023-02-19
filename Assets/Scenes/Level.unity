@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a09a4949fba33e4499615fe7fdd47500,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3436,11 +3437,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas-UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 9190223966314270792, guid: ac6adfbe41adbea4f968626eb8338037,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac6adfbe41adbea4f968626eb8338037, type: 3}
