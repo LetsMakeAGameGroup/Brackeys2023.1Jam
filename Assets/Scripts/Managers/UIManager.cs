@@ -1,14 +1,19 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     public static UIManager Instance { get; private set; }
 
-    [SerializeField] private GameObject interactUI;
+    [SerializeField] private Image interactUI;
+    [SerializeField] private Sprite openHandInteract;
+    [SerializeField] private Sprite closedHandInteract;
+    [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private RectTransform topEyelidUI;
     [SerializeField] private RectTransform botEyelidUI;
     [SerializeField] private float eyeSpeed = 1f;
+    [SerializeField] private GameObject winMenu;
 
     private Vector2 topEyelidOrigin;
     private Vector2 botEyelidOrigin;
@@ -37,32 +42,24 @@ public class UIManager : MonoBehaviour {
 
     // Toggles the interaction UI if it hasn't been done so already.
     public void ToggleInteractionUI(PlayerInteractions player, IInteractable interactable) {
-        if (interactable != null) {
-            // Disables UI if the player is holding something already
-            if (interactable.GetType() == typeof(Pickupable) && player.holdingObject != null) {
-                if (interactUI.activeSelf) {
-                    interactUI.SetActive(false);
-                }
-                return;
-            }
-            // Disables UI if the player is pushing something already
-            else if (interactable.GetType() == typeof(Slidable) && player.pushingObject != null) {
-                if (interactUI.activeSelf) {
-                    interactUI.SetActive(false);
-                }
-                return;
-            }
-            // Disables UI if the player is pushing something already
-            else if (interactable.GetType() == typeof(Imitator) && player.imitators.Contains((Imitator)interactable)) {
-                if (interactUI.activeSelf) {
-                    interactUI.SetActive(false);
-                }
-                return;
-            }
+        // Closes hand if the player is holding/pushing something already
+        if (player.holdingObject != null || player.pushingObject != null) {
+            interactUI.enabled = true;
+            interactUI.sprite = closedHandInteract;
+            return;
         }
 
-        if (interactUI.activeSelf != (interactable != null)) {
-            interactUI.SetActive((interactable != null));
+        // Disables UI if the imitator is imitating already
+        else if (interactable != null && interactable.GetType() == typeof(Imitator) && player.imitators.Contains((Imitator)interactable)) {
+            interactUI.enabled = false;
+            return;
+        }
+
+        if (interactable != null) {
+            interactUI.enabled = true;
+            interactUI.sprite = openHandInteract;
+        } else {
+            interactUI.enabled = false;
         }
     }
 
@@ -82,5 +79,12 @@ public class UIManager : MonoBehaviour {
             botEyelidUI.anchoredPosition = Vector2.MoveTowards(botEyelidUI.anchoredPosition, botEyelidOrigin, eyeSpeed * Time.deltaTime);
             yield return null;
         }
+    }
+
+    public void EnableWinMenu() {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        winMenu.SetActive(true);
     }
 }
