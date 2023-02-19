@@ -52,9 +52,14 @@ public class AudioManager : MonoBehaviour {
             return;
         }
 
-        musicSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
+        //musicSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
         musicSource.clip = musicToPlay;
         musicSource.Play();
+    }
+
+    public void StopMusic() 
+    {
+        musicSource.Stop();
     }
 
     public void PlayMainMenuMusic()

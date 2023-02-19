@@ -47,7 +47,18 @@ public class DayManager : MonoBehaviour {
 
     // Increases the day by one and wraps around when on the last day.
     public IEnumerator OnPlayerAwake(int day = -1) {
+
+        if (AudioManager.Instance)
+        {
+            AudioManager.Instance.StopMusic();
+        }
+        if (AudioManager.Instance)
+        {
+            AudioManager.Instance.PlayMusic(AudioManager.Instance.levelMusic[currentDay]);
+        }
+
         yield return new WaitForSeconds(sleepTransition);
+
 
         int previousDay = currentDay;
         if (day == -1) currentDay = (currentDay % days) + 1;
