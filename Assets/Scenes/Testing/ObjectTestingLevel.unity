@@ -2157,16 +2157,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4845104576655860950, guid: 9d491ee865f4df54397dd45714a25897,
-        type: 3}
-      propertyPath: openCloseSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4845104576655860950, guid: 9d491ee865f4df54397dd45714a25897,
-        type: 3}
-      propertyPath: yOpenDoorDelta
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4845104576655860951, guid: 9d491ee865f4df54397dd45714a25897,
         type: 3}
       propertyPath: m_Name

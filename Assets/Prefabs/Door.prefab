@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isClosed: 1
+  yOpenDoorDelta: 10
+  openCloseSpeed: 2
 --- !u!114 &6265790354607933148
 MonoBehaviour:
   m_ObjectHideFlags: 0
