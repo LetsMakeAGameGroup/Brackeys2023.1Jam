@@ -9,12 +9,17 @@ public class Door : MonoBehaviour, IPuzzleSuccessReceptor
 
     public bool isClosed = true;
 
-    private Coroutine openGate;
-    public float yDelta = 10;
+    Vector3 initialClosedGatePosition;
+    Vector3 openGatePosition;
+    public float yOpenDoorDelta;
+    public float openCloseSpeed;
 
     void Awake() 
     {
         m_AudioSource = GetComponent<AudioSource>();
+
+        initialClosedGatePosition = transform.position;
+        openGatePosition = initialClosedGatePosition + (Vector3.up * yOpenDoorDelta);
     }
 
     public void OnPuzzleSuccess()
@@ -34,40 +39,70 @@ public class Door : MonoBehaviour, IPuzzleSuccessReceptor
 
         //Run door open/close animation or disable
 
-        if (openGate == null)
+        if (m_AudioSource.isPlaying) 
         {
-            if (m_AudioSource.isPlaying) 
-            {
-                m_AudioSource.Stop();
-            }
+            m_AudioSource.Stop();
+        }
 
-            if (isClosed)
-            {
-                m_AudioSource.Play();
-                openGate = StartCoroutine(OpenCloseGate(4, -yDelta));
-            }
-            else 
-            {
-                m_AudioSource.Play();
-                openGate = StartCoroutine(OpenCloseGate(4, yDelta));
-            }
+        if (isClosed)
+        {
+            m_AudioSource.Play();
+            StopAllCoroutines();
+            StartCoroutine(CloseGate(openCloseSpeed));
+        }
+        else 
+        {
+            m_AudioSource.Play();
+            StopAllCoroutines();
+            StartCoroutine(OpenGate(openCloseSpeed));
         }
     }
 
-    IEnumerator OpenCloseGate (float duration, float newY)
+    IEnumerator OpenGate (float speed)
     {
         float timeElapsed = 0;
-        Vector3 currentPos = transform.position;
 
-        while (timeElapsed < duration && transform.position.y != newY) 
+        Vector3 currentPos = transform.position;
+        Vector3 openGatePos = openGatePosition;
+
+        while (currentPos != openGatePos) 
         {
-            transform.position = Vector3.Lerp(currentPos, currentPos + Vector3.up * newY, timeElapsed / duration);
-            timeElapsed += Time.deltaTime;
+            //transform.position = Vector3.Lerp(currentPos, openGatePos, timeElapsed);
+            transform.position = Vector3.MoveTowards(currentPos, openGatePos, timeElapsed);
+            timeElapsed += speed * Time.deltaTime;
 
             yield return null;
         }
 
-        openGate = null;
+        if (currentPos == openGatePos)
+        {
+            transform.position = openGatePos;
+        }
+
+        yield return null;
+    }
+
+    IEnumerator CloseGate(float speed)
+    {
+        float timeElapsed = 0;
+
+        Vector3 currentPos = transform.position;
+        Vector3 closedGatePos = initialClosedGatePosition;
+
+        while (currentPos != closedGatePos)
+        {
+            //transform.position = Vector3.Lerp(currentPos, closedGatePos, timeElapsed);
+            transform.position = Vector3.MoveTowards(currentPos, closedGatePos, timeElapsed);
+            timeElapsed += speed * Time.deltaTime;
+
+            yield return null;
+        }
+
+        if (currentPos == closedGatePos)
+        {
+            transform.position = closedGatePos;
+        }
+
         yield return null;
     }
 

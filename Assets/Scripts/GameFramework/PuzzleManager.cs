@@ -11,7 +11,8 @@ public interface IPuzzleSuccessReceptor
 public class PuzzleManager : Listener
 {
     public GameObject PuzzleSuccessReceiver;
-    bool puzzleCompleted;
+    [SerializeField] bool puzzleCompletedFirstTime;
+    [SerializeField] bool puzzleCompleted;
 
     public void OnPuzzleComplete()
     {
@@ -29,7 +30,11 @@ public class PuzzleManager : Listener
 
                     if (AudioManager.Instance) 
                     {
-                        AudioManager.Instance.PlayOnPuzzleComplete();
+                        if (!puzzleCompletedFirstTime)
+                        {
+                            AudioManager.Instance.PlayOnPuzzleComplete();
+                            puzzleCompletedFirstTime = true;
+                        }
                     }
                 }
             }
