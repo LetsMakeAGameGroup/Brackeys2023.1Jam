@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(PlayerInteractions))]
 public class PlayerMovement : MonoBehaviour {
 
     AudioSource m_AudioSource;
@@ -11,18 +12,20 @@ public class PlayerMovement : MonoBehaviour {
 
     // References
     [HideInInspector] public CharacterController characterController = null;
+    [HideInInspector] public PlayerInteractions playerInteractions = null;
 
     private Vector3 moveDirection = Vector3.zero;
 
     private void Awake() {
         characterController = GetComponent<CharacterController>();
+        playerInteractions = GetComponent<PlayerInteractions>();
         m_AudioSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
         // Check if in a state for pushing an object
-        if (GetComponent<PlayerInteractions>().pushingObject != null) {
-            GetComponent<PlayerInteractions>().pushingObject.OnPush(GetComponent<PlayerInteractions>(), Input.GetAxis("Vertical"));
+        if (playerInteractions.pushingObject != null) {
+            playerInteractions.pushingObject.OnPush(playerInteractions, Input.GetAxis("Vertical"));
             return;
         }
 
@@ -67,8 +70,8 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // If there are any active imitators, imitate the input.
-        if (GetComponent<PlayerInteractions>().imitators.Count > 0) {
-            foreach(Imitator imitator in GetComponent<PlayerInteractions>().imitators) {
+        if (playerInteractions.imitators.Count > 0) {
+            foreach(Imitator imitator in playerInteractions.imitators) {
                 imitator.OnImitateMovement(moveDirection);
             }
         }
