@@ -35,20 +35,26 @@ public class Slidable : MonoBehaviour, IInteractable {
 
             dir.Normalize();
 
-            transform.position += pushSpeed * Time.deltaTime * dir;
-
-            // Make sure that the player isn't pushing into the object or else the object will be pushed through the wall.
-            float offset = 1;
-            float maxDistance = 0;
-            if (dir.z == 0 && pushForce != -1f) {
-                offset = Mathf.Abs(interactee.transform.position.x - transform.position.x);
-                maxDistance = (interactee.transform.localScale.x / 2) + (transform.localScale.x / 2) + 0.5f;
-            } else if (dir.x == 0 && pushForce != -1f) {
-                offset = Mathf.Abs(interactee.transform.position.z - transform.position.z);
-                maxDistance = (interactee.transform.localScale.z / 2) + (transform.localScale.z / 2) + 0.5f;
+            // Check if box is being pushed into a wall
+            if (pushForce != -1f) {
+                RaycastHit[] hitDetects = Physics.BoxCastAll(GetComponent<Collider>().bounds.center, GetComponent<Collider>().bounds.extents - new Vector3(0.01f, 0.01f, 0.01f), dir, transform.rotation, 0.02f, ~LayerMask.GetMask("IgnoreSlidable"));
+                Debug.Log($"box length: {hitDetects.Length}");
+                if (hitDetects.Length > 1) {
+                    return;
+                }
             }
 
-            if (interactee.GetComponent<CharacterController>().enabled && offset > maxDistance) interactee.GetComponent<CharacterController>().Move(pushSpeed * Time.deltaTime * dir);
+            // Check if player is pulling into a wall
+            if (pushForce != 1f) {
+                RaycastHit[] hitDetects = Physics.BoxCastAll(interactee.GetComponent<Collider>().bounds.center, interactee.GetComponent<Collider>().bounds.extents - new Vector3(0.01f, 0.01f, 0.01f), -dir, transform.rotation, 0.02f, ~LayerMask.GetMask("IgnoreSlidable"));
+                Debug.Log($"player length: {hitDetects.Length}");
+                if (hitDetects.Length > 2) {
+                    return;
+                }
+            }
+
+            transform.position += pushSpeed * Time.deltaTime * dir;
+            interactee.transform.position += pushSpeed * Time.deltaTime * dir;
         } else {
             audioSource.Stop();
         }

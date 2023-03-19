@@ -249,6 +249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate
       objectReference: {fileID: 0}
+    - target: {fileID: 5152657871650932856, guid: 6b95073cceac9e74b9d0c62c3e5ebfef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7649174657289700222, guid: 6b95073cceac9e74b9d0c62c3e5ebfef,
         type: 3}
       propertyPath: m_LocalPosition.x
