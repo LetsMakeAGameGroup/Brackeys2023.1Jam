@@ -11,8 +11,8 @@ public interface IPuzzleSuccessReceptor
 public class PuzzleManager : Listener
 {
     public GameObject PuzzleSuccessReceiver;
-    [SerializeField] bool puzzleCompletedFirstTime;
-    [SerializeField] bool puzzleCompleted;
+    bool puzzleCompletedFirstTime;
+    [HideInInspector] public bool puzzleCompleted;
 
     public void OnPuzzleComplete()
     {
