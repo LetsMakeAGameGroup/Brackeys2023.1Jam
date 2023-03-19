@@ -33,16 +33,13 @@ public class PlayerMovement : MonoBehaviour {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        float curSpeedX = (Input.GetButton("Sprint") ? sprintSpeed : walkSpeed) * Input.GetAxis("Vertical");
-        float curSpeedY = (Input.GetButton("Sprint") ? sprintSpeed : walkSpeed) * Input.GetAxis("Horizontal");
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+        moveDirection = (forward * Input.GetAxis("Vertical")) + (right * Input.GetAxis("Horizontal"));
 
         if (Input.GetButton("Jump") && characterController.isGrounded) {
             moveDirection.y = jumpSpeed;
-        } else {
-            moveDirection.y = movementDirectionY;
         }
+
+        moveDirection.Normalize();
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
@@ -52,19 +49,14 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // Move the controller and imitators if there are any
-        if (characterController.enabled) characterController.Move(moveDirection * Time.deltaTime);
+        if (characterController.enabled) characterController.Move((Input.GetButton("Sprint") ? sprintSpeed : walkSpeed) * Time.deltaTime * moveDirection);
 
-        if ((moveDirection.x > 0 || moveDirection.z > 0) && characterController.isGrounded)
-        {
-            if (!m_AudioSource.isPlaying)
-            {
+        if ((moveDirection.x > 0 || moveDirection.z > 0) && characterController.isGrounded) {
+            if (!m_AudioSource.isPlaying) {
                 m_AudioSource.Play();
             }
-        }
-        else 
-        {
-            if (m_AudioSource.isPlaying)
-            {
+        } else {
+            if (m_AudioSource.isPlaying) {
                 m_AudioSource.Stop();
             }
         }
@@ -76,9 +68,8 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) 
-        {
-            if(PauseMenu.Instance) PauseMenu.Instance.TogglePause();
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) {
+            if (PauseMenu.Instance) PauseMenu.Instance.TogglePause();
         }
     }
 }
