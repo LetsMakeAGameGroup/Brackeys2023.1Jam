@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17511135, g: 0.21907261, b: 0.30137295, a: 1}
+  m_IndirectSpecularColor: {r: 0.17511094, g: 0.21907215, b: 0.30137148, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1602,6 +1602,7 @@ Transform:
   - {fileID: 832575519}
   - {fileID: 1007506135}
   - {fileID: 984455326}
+  - {fileID: 1075276029}
   - {fileID: 1468139137}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -6944,7 +6945,7 @@ PrefabInstance:
     - target: {fileID: 3309464399274953194, guid: 13f98af1cf0ff5d4284d6bf898dfac8e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3309464399274953194, guid: 13f98af1cf0ff5d4284d6bf898dfac8e,
         type: 3}
@@ -8872,7 +8873,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &857437236 stripped
 Transform:
@@ -10218,7 +10219,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 145705717}
     m_Modifications:
     - target: {fileID: 2647318180375657477, guid: 1124da72811428b4b8099fb9c2296c35,
         type: 3}
@@ -10233,7 +10234,7 @@ PrefabInstance:
     - target: {fileID: 2647318180375657477, guid: 1124da72811428b4b8099fb9c2296c35,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2647318180375657477, guid: 1124da72811428b4b8099fb9c2296c35,
         type: 3}
@@ -10332,6 +10333,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1124da72811428b4b8099fb9c2296c35, type: 3}
+--- !u!224 &1075276029 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2647318180375657477, guid: 1124da72811428b4b8099fb9c2296c35,
+    type: 3}
+  m_PrefabInstance: {fileID: 1075276028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1080505647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15004,7 +15011,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 145705717}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1474094191
 PrefabInstance:
