@@ -24,7 +24,7 @@ public class DayManager : MonoBehaviour {
             Instance = this;
         }
 
-        dayObjects = FindObjectsOfType<DayObject>().Select(dayObject => dayObject.gameObject).ToList();
+        dayObjects = FindObjectsOfType<DayObject>(true).Select(dayObject => dayObject.gameObject).ToList();
     }
 
     private void Start() {
