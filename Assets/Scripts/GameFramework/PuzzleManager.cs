@@ -24,6 +24,11 @@ public class PuzzleManager : Listener
             {
                 IPuzzleSuccessReceptor receptor = PuzzleSuccessReceiver.GetComponent<IPuzzleSuccessReceptor>();
 
+                if (receptor == null) 
+                {
+                    receptor = PuzzleSuccessReceiver.GetComponentInChildren<IPuzzleSuccessReceptor>();
+                }
+
                 if (receptor != null)
                 {
                     receptor.OnPuzzleSuccess();
