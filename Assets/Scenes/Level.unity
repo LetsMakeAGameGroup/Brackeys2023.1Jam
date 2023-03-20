@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17511135, g: 0.21907261, b: 0.30137295, a: 1}
+  m_IndirectSpecularColor: {r: 0.17511094, g: 0.21907215, b: 0.30137148, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -355,6 +355,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 232647825}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 1545673175}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -980,6 +985,12 @@ Transform:
   m_Father: {fileID: 218818521}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &71893081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 867660321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &72665862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,6 +3052,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 1202606926}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 1715043965}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -4477,6 +4493,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 867660322}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 71893081}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -4587,6 +4608,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 1211795888}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 1792291882}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -5497,6 +5523,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 1059009184}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 1718241098}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -6199,6 +6230,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596149793}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &602401817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 674768484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &616760040
 GameObject:
   m_ObjectHideFlags: 0
@@ -6428,6 +6465,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 1945475385}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -6627,6 +6669,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 13459024}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 1051145547}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -8202,6 +8249,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 821365613}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &822637826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1474094191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &830161603
 GameObject:
   m_ObjectHideFlags: 0
@@ -9760,6 +9813,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1051145547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 13459023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1059009184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1059009184, guid: d18d7183e767af34eb660c2f1a20063b,
@@ -9789,6 +9848,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 910140155}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 1246181583}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -12172,6 +12236,12 @@ MonoBehaviour:
   thirdDay: 0
   fourthDay: 0
   fifthDay: 1
+--- !u!1 &1246181583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 910140154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1255465720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12886,6 +12956,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8377495786846492612, guid: ce85c97af4881334dae3f878f5445259,
     type: 3}
   m_PrefabInstance: {fileID: 1346880007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1351628014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2005615263}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1353761362
 PrefabInstance:
@@ -15073,6 +15149,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 484469204670427536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1545673175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 232647824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1549701879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16384,6 +16466,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1328771150}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1715043965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1202606924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1718241098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1024626392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1723583108
 GameObject:
   m_ObjectHideFlags: 0
@@ -16953,6 +17047,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce85c97af4881334dae3f878f5445259, type: 3}
+--- !u!1 &1792291882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1211795887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1794014470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17857,6 +17957,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 674768486}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 602401817}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -18423,6 +18528,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce85c97af4881334dae3f878f5445259, type: 3}
+--- !u!1 &1945475385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
+    type: 3}
+  m_PrefabInstance: {fileID: 731967942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954201462
 GameObject:
   m_ObjectHideFlags: 0
@@ -19464,6 +19575,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 2005615265}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 1351628014}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
@@ -19904,6 +20020,11 @@ PrefabInstance:
       propertyPath: PuzzleSuccessReceiver
       value: 
       objectReference: {fileID: 1474094192}
+    - target: {fileID: 7202531415207261957, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
+        type: 3}
+      propertyPath: PuzzleSuccessReceiver.Array.data[0]
+      value: 
+      objectReference: {fileID: 822637826}
     - target: {fileID: 7202531415207261978, guid: b98b8f5e2e91d584ea4a2b45fcdda080,
         type: 3}
       propertyPath: m_RootOrder
