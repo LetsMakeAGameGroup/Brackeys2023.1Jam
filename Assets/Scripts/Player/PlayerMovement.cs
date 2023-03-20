@@ -33,13 +33,16 @@ public class PlayerMovement : MonoBehaviour {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
+        float moveDirectionY = moveDirection.y;
         moveDirection = (forward * Input.GetAxis("Vertical")) + (right * Input.GetAxis("Horizontal"));
+        moveDirection.Normalize();
+        moveDirection *= (Input.GetButton("Sprint") ? sprintSpeed : walkSpeed);
 
         if (Input.GetButton("Jump") && characterController.isGrounded) {
             moveDirection.y = jumpSpeed;
+        } else {
+            moveDirection.y = moveDirectionY;
         }
-
-        moveDirection.Normalize();
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
@@ -49,7 +52,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // Move the controller and imitators if there are any
-        if (characterController.enabled) characterController.Move((Input.GetButton("Sprint") ? sprintSpeed : walkSpeed) * Time.deltaTime * moveDirection);
+        if (characterController.enabled) characterController.Move(moveDirection * Time.deltaTime);
 
         if ((moveDirection.x > 0 || moveDirection.z > 0) && characterController.isGrounded) {
             if (!m_AudioSource.isPlaying) {
