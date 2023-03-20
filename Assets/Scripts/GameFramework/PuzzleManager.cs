@@ -10,7 +10,7 @@ public interface IPuzzleSuccessReceptor
 
 public class PuzzleManager : Listener
 {
-    public GameObject PuzzleSuccessReceiver;
+    public GameObject[] PuzzleSuccessReceiver;
     bool puzzleCompletedFirstTime;
     [HideInInspector] public bool puzzleCompleted;
 
@@ -20,25 +20,23 @@ public class PuzzleManager : Listener
         {
             Debug.Log("Puzzle Completed");
 
-            if (PuzzleSuccessReceiver)
+            if (PuzzleSuccessReceiver != null)
             {
-                IPuzzleSuccessReceptor receptor = PuzzleSuccessReceiver.GetComponent<IPuzzleSuccessReceptor>();
-
-                if (receptor == null) 
+                foreach (GameObject puzzleReceiver in PuzzleSuccessReceiver)
                 {
-                    receptor = PuzzleSuccessReceiver.GetComponentInChildren<IPuzzleSuccessReceptor>();
-                }
+                    IPuzzleSuccessReceptor receptor = GetPuzzleReceptorFromGameObject(puzzleReceiver);
 
-                if (receptor != null)
-                {
-                    receptor.OnPuzzleSuccess();
-
-                    if (AudioManager.Instance) 
+                    if (receptor != null)
                     {
-                        if (!puzzleCompletedFirstTime)
+                        receptor.OnPuzzleSuccess();
+
+                        if (AudioManager.Instance)
                         {
-                            AudioManager.Instance.PlayOnPuzzleComplete();
-                            puzzleCompletedFirstTime = true;
+                            if (!puzzleCompletedFirstTime)
+                            {
+                                AudioManager.Instance.PlayOnPuzzleComplete();
+                                puzzleCompletedFirstTime = true;
+                            }
                         }
                     }
                 }
@@ -54,13 +52,16 @@ public class PuzzleManager : Listener
         {
             Debug.Log("Puzzle Resetted");
 
-            if (PuzzleSuccessReceiver)
+            if (PuzzleSuccessReceiver != null)
             {
-                IPuzzleSuccessReceptor receptor = PuzzleSuccessReceiver.GetComponent<IPuzzleSuccessReceptor>();
-
-                if (receptor != null)
+                foreach (GameObject puzzleReceiver in PuzzleSuccessReceiver)
                 {
-                    receptor.OnPuzzleFailure();
+                    IPuzzleSuccessReceptor receptor = GetPuzzleReceptorFromGameObject(puzzleReceiver);
+
+                    if (receptor != null)
+                    {
+                        receptor.OnPuzzleFailure();
+                    }
                 }
             }
 
@@ -94,9 +95,27 @@ public class PuzzleManager : Listener
     {
         if (PuzzleSuccessReceiver != null)
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, PuzzleSuccessReceiver.transform.position);
+            foreach (GameObject puzzleReceiver in PuzzleSuccessReceiver)
+            {
+                if (puzzleReceiver != null)
+                {
+                    Gizmos.color = Color.green;
+                    Gizmos.DrawLine(transform.position, puzzleReceiver.transform.position);
+                }
+            }
         }
+    }
+
+    public IPuzzleSuccessReceptor GetPuzzleReceptorFromGameObject(GameObject puzzleReceiver) 
+    {
+        IPuzzleSuccessReceptor receptor = puzzleReceiver.GetComponent<IPuzzleSuccessReceptor>();
+
+        if (receptor == null)
+        {
+            receptor = puzzleReceiver.GetComponentInChildren<IPuzzleSuccessReceptor>();
+        }
+
+        return receptor;
     }
 
 }
