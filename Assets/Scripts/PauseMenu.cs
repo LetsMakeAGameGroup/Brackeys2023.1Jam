@@ -32,13 +32,25 @@ public class PauseMenu : MonoBehaviour
 
         Cursor.visible = isPaused;
 
+        AudioSource[] allAudioSource = FindObjectsOfType<AudioSource>();
+
         if (isPaused)
         {
             Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
+
+            foreach(AudioSource audioSource in allAudioSource) {
+                audioSource.Pause();
+            }
         }
         else 
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+
+            foreach (AudioSource audioSource in allAudioSource) {
+                audioSource.UnPause();
+            }
         }
     }
 
