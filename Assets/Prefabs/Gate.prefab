@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1059009189}
   - component: {fileID: 3640255169725155963}
-  - component: {fileID: 7585811411983003366}
   - component: {fileID: 2598474455091140823}
   - component: {fileID: 4397421257320505549}
   - component: {fileID: 1951316902681243447}
@@ -52,23 +51,6 @@ MonoBehaviour:
   isClosed: 1
   yOpenDoorDelta: 10
   openCloseSpeed: 2
---- !u!114 &7585811411983003366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059009184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6021e34bbf745f409906068f25566a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstDay: 1
-  secondDay: 0
-  thirdDay: 0
-  fourthDay: 0
-  fifthDay: 0
 --- !u!65 &2598474455091140823
 BoxCollider:
   m_ObjectHideFlags: 0

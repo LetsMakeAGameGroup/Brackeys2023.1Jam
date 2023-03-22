@@ -9632,6 +9632,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2011165821}
     m_Modifications:
+    - target: {fileID: 3640255169725155963, guid: d18d7183e767af34eb660c2f1a20063b,
+        type: 3}
+      propertyPath: yOpenDoorDelta
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 3921337904087297795, guid: d18d7183e767af34eb660c2f1a20063b,
         type: 3}
       propertyPath: m_Name

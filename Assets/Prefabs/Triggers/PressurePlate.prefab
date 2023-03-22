@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 484469203720490081}
   - component: {fileID: 484469203720490111}
-  - component: {fileID: -7081563518713120304}
   - component: {fileID: -9140895355543020773}
   - component: {fileID: 9100689756854728422}
   m_Layer: 0
@@ -56,23 +55,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   pressurePlateDetectHeight: 0.5
---- !u!114 &-7081563518713120304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484469203720490110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6021e34bbf745f409906068f25566a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstDay: 1
-  secondDay: 1
-  thirdDay: 1
-  fourthDay: 1
-  fifthDay: 1
 --- !u!82 &-9140895355543020773
 AudioSource:
   m_ObjectHideFlags: 0
