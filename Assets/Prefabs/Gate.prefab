@@ -1843,6 +1843,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3459459795450826869}
+  - component: {fileID: 5439791453021862098}
+  - component: {fileID: 3774238082675308381}
+  - component: {fileID: 3203653774609449750}
   m_Layer: 0
   m_Name: Gate_Frame
   m_TagString: Untagged
@@ -1885,6 +1888,45 @@ Transform:
   m_Father: {fileID: 4404719037739021753}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5439791453021862098
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7110052627491521766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.006606, y: 5.0823894, z: 1.6951123}
+  m_Center: {x: 0.3747995, y: 2.4709175, z: 2.4607115}
+--- !u!65 &3774238082675308381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7110052627491521766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.006606, y: 5.0823894, z: 1.6951123}
+  m_Center: {x: 0.3747995, y: 2.4709175, z: -2.460711}
+--- !u!65 &3203653774609449750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7110052627491521766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1474283, y: 0.6826394, z: 3.3897367}
+  m_Center: {x: 0.3685691, y: 4.136435, z: 0}
 --- !u!1 &7435638275275666686
 GameObject:
   m_ObjectHideFlags: 0
