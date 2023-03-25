@@ -16,7 +16,7 @@ public class PressurePlate : Subject
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Physics.CheckBox(transform.position, new Vector3(transform.localScale.x, pressurePlateDetectHeight, transform.localScale.z), transform.rotation, layerMask))
         {
@@ -33,7 +33,10 @@ public class PressurePlate : Subject
         {
             if (canBeToggle)
             {
-                Reset();
+                if (beingPressed)
+                {
+                    Reset();
+                }
 
                 if (beingPressed)
                 {

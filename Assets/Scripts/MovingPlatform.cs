@@ -8,6 +8,7 @@ public class MovingPlatform : Listener, IPuzzleSuccessReceptor
 
     public float movingPlatformSpeed;
     public bool canLoop = true;
+    public bool isActiveAtStart = true;
 
     public List<Vector3> positionPoints = new List<Vector3>();
     int currentPositionIndex;
@@ -15,16 +16,16 @@ public class MovingPlatform : Listener, IPuzzleSuccessReceptor
     private Coroutine moveToNextPointCoroutine;
     private void Start()
     {
-        moveToNextPointCoroutine = StartCoroutine(MoveToNextPoint(GetPositionByIndex(currentPositionIndex)));
+        if (isActiveAtStart)
+        {
+            ResumeMovingPlatform();
+        }
     }
 
     public void StopMovingPlatform() 
     {
-        if (moveToNextPointCoroutine != null) 
-        {
-            StopCoroutine(moveToNextPointCoroutine);
-            moveToNextPointCoroutine = null;
-        }
+        StopAllCoroutines();
+        moveToNextPointCoroutine = null;
     }
 
     public void ResumeMovingPlatform() 
@@ -143,11 +144,25 @@ public class MovingPlatform : Listener, IPuzzleSuccessReceptor
 
     public void OnPuzzleSuccess()
     {
-        StopMovingPlatform();
+        if (isActiveAtStart)
+        {
+            StopMovingPlatform();
+        }
+        else 
+        {
+            ResumeMovingPlatform();
+        }
     }
 
     public void OnPuzzleFailure()
     {
-        ResumeMovingPlatform();
+        if (isActiveAtStart)
+        {
+            ResumeMovingPlatform();
+        }
+        else
+        {
+            StopMovingPlatform();
+        }
     }
 }
