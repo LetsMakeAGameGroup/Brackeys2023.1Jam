@@ -17,6 +17,8 @@ public class PlayerCameraController : MonoBehaviour {
     }
 
     private void Update() {
+        if (Time.timeScale == 0) return;
+
         rotationX += -Input.GetAxis("Mouse Y") * cameraSens;
         rotationX = Mathf.Clamp(rotationX, -90, 90);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
