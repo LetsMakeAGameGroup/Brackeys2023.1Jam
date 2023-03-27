@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour {
 
     private Vector3 moveDirection = Vector3.zero;
 
+    [HideInInspector] public Vector3 externalMoveSpeed;
+
     private void Awake() {
         characterController = GetComponent<CharacterController>();
         playerInteractions = GetComponent<PlayerInteractions>();
@@ -52,7 +54,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // Move the controller and imitators if there are any
-        if (characterController.enabled) characterController.Move(moveDirection * Time.deltaTime);
+        if (characterController.enabled) characterController.Move((moveDirection + externalMoveSpeed) * Time.deltaTime);
 
         if ((moveDirection.x > 0 || moveDirection.z > 0) && characterController.isGrounded) {
             if (!m_AudioSource.isPlaying) {
