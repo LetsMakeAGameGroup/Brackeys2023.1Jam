@@ -81,10 +81,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156b7dc2db50f4c4bbd4228af9da1a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 6
-  sprintSpeed: 10
+  walkSpeed: 4.5
+  sprintSpeed: 13
   jumpSpeed: 6
   characterController: {fileID: 0}
+  playerInteractions: {fileID: 0}
+  externalMoveSpeed: {x: 0, y: 0, z: 0}
 --- !u!114 &7078558874922188745
 MonoBehaviour:
   m_ObjectHideFlags: 0
