@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7585811411983003366}
   - component: {fileID: 2598474455091140823}
   - component: {fileID: 4397421257320505549}
-  - component: {fileID: 1951316902681243447}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -91,7 +90,8 @@ AudioSource:
   m_GameObject: {fileID: 1059009184}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -9066845986845929513, guid: 3a9fcc44bffebcf449e6f3bba6e20507,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: a572589313c7e0e4e9954f7525809883, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -178,19 +178,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1951316902681243447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059009184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78c3a12783f8a540996a832b557192d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundType: 0
 --- !u!1 &332655418085381467
 GameObject:
   m_ObjectHideFlags: 0

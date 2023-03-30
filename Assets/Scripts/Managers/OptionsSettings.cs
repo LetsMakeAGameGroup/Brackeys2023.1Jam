@@ -6,42 +6,24 @@ using UnityEngine.Audio;
 
 public class OptionsSettings : MonoBehaviour
 {
+    public float musicVolumen;
+    public float fxVolumen;
+
     public Slider SoundVolumenSlider;
     public Slider FXVolumenSlider;
 
-    private void Start()
-    {
-        if (PlayerPrefs.HasKey("MusicVolume"))
-        {
-            SoundVolumenSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-            SetMusicVolume(SoundVolumenSlider.value);
-        }
-
-        if (PlayerPrefs.HasKey("FXVolume"))
-        {
-            FXVolumenSlider.value = PlayerPrefs.GetFloat("FXVolume");
-            SetFXVolume(FXVolumenSlider.value);
-        }
-
-        if (AudioManager.Instance) 
-        {
-            SoundVolumenSlider.onValueChanged.AddListener(SetMusicVolume);
-            FXVolumenSlider.onValueChanged.AddListener(SetFXVolume);
-        }
-    }
-
     private void OnEnable()
     {
-        if (PlayerPrefs.HasKey("MusicVolume"))
+        if (PlayerPrefs.HasKey("MusicVolumeSlider"))
         {
-            SoundVolumenSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-            SetMusicVolume(SoundVolumenSlider.value);
+            musicVolumen = PlayerPrefs.GetFloat("MusicVolumeSlider");
+            SoundVolumenSlider.value = musicVolumen;
         }
 
-        if (PlayerPrefs.HasKey("FXVolume"))
+        if (PlayerPrefs.HasKey("FXVolumeSlider"))
         {
-            FXVolumenSlider.value = PlayerPrefs.GetFloat("FXVolume");
-            SetFXVolume(FXVolumenSlider.value);
+            fxVolumen = PlayerPrefs.GetFloat("FXVolumeSlider");
+            FXVolumenSlider.value = fxVolumen;
         }
 
         if (AudioManager.Instance)
@@ -53,30 +35,29 @@ public class OptionsSettings : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {
-        PlayerPrefs.SetFloat("MusicVolume", volume);
+        musicVolumen = SoundVolumenSlider.value;
+        PlayerPrefs.SetFloat("MusicVolumeSlider", musicVolumen);
 
         if (AudioManager.Instance) 
         {
-            AudioManager.Instance.SetMusicVolumen(volume);
+            AudioManager.Instance.SetMusicVolumen(musicVolumen);
         }
     }
 
     public void SetFXVolume(float volume)
     {
-        PlayerPrefs.SetFloat("FXVolume", volume);
+        fxVolumen = FXVolumenSlider.value;
+        PlayerPrefs.SetFloat("FXVolumeSlider", fxVolumen);
 
         if (AudioManager.Instance)
         {
-            AudioManager.Instance.SetSFXVolumen(volume);
+            AudioManager.Instance.SetSFXVolumen(fxVolumen);
         }
     }
 
     public void OnDisable()
     {
-        if (AudioManager.Instance)
-        {
-            SoundVolumenSlider.onValueChanged.RemoveAllListeners();
-            FXVolumenSlider.onValueChanged.RemoveAllListeners();
-        }
+        SoundVolumenSlider.onValueChanged.RemoveAllListeners();
+        FXVolumenSlider.onValueChanged.RemoveAllListeners();
     }
 }

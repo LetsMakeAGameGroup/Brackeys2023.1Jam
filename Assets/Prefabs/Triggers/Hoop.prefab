@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -5602339090585209201}
   - component: {fileID: 3215419869394006288}
   - component: {fileID: 2142618530890138721}
-  - component: {fileID: 885102218869073009}
   m_Layer: 0
   m_Name: Hoop
   m_TagString: Untagged
@@ -92,7 +91,8 @@ AudioSource:
   m_GameObject: {fileID: 3215419869394006301}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -9066845986845929513, guid: 3a9fcc44bffebcf449e6f3bba6e20507,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 86bcd46026296084abc978b9743ee536, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -179,19 +179,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &885102218869073009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3215419869394006301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78c3a12783f8a540996a832b557192d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundType: 0
 --- !u!1 &3215419870092567894
 GameObject:
   m_ObjectHideFlags: 0

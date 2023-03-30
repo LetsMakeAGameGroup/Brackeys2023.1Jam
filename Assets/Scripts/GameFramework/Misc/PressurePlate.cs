@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class PressurePlate : Subject
 {
-    AudioSource audioSource;
+    [SerializeField] AudioClip onTriggerAudioClip;
     public bool canBeToggle = true;
     public bool beingPressed;
 
     public LayerMask layerMask;
     public float pressurePlateDetectHeight = .25f;
-
-    public void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     private void Update()
     {
@@ -22,11 +17,15 @@ public class PressurePlate : Subject
         {
             NotifyListener();
             AnimatePlate(true);
-            audioSource.Play();
 
             if (!beingPressed) 
             {
                 beingPressed = true;
+
+                if (AudioManager.Instance)
+                {
+                    AudioManager.Instance.PlayOneShotSound(onTriggerAudioClip);
+                }
             }
         }
         else 
@@ -42,7 +41,11 @@ public class PressurePlate : Subject
                 {
                     AnimatePlate(false);
                     beingPressed = false;
-                    audioSource.Play();
+
+                    if (AudioManager.Instance)
+                    {
+                        AudioManager.Instance.PlayOneShotSound(onTriggerAudioClip);
+                    }
                 }
             }
         }

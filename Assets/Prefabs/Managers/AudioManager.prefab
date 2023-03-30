@@ -143,11 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67523245b5adbce49a667f28347bbcd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OneShotSource: {fileID: 0}
+  OneShotSource: {fileID: 3309464399274953195}
   musicSource: {fileID: 3309464399484591073}
   ambienceSource: {fileID: 3309464400182150690}
   MusicVolumen: 0
   SFXVolumen: 0
+  audioMixer: {fileID: 24100000, guid: 3a9fcc44bffebcf449e6f3bba6e20507, type: 2}
   mainMenuMusic: {fileID: 0}
   onPuzzleComplete:
   - {fileID: 8300000, guid: c2f6f43ef8b53bd4d8f36e9c18730292, type: 3}
