@@ -52,9 +52,16 @@ public class AudioManager : MonoBehaviour {
             SetSFXVolumen(PlayerPrefs.GetFloat("SFXVolumen"));
         }
 
-        MusicVolumenSlider.value = MusicVolumen;
-        FXVolumenSlider.value = SFXVolumen;
-            
+        if (MusicVolumenSlider != null)
+        {
+            MusicVolumenSlider.value = MusicVolumen;
+        }
+
+        if (FXVolumenSlider != null)
+        {
+            FXVolumenSlider.value = SFXVolumen;
+        }
+
         MusicVolumenSlider.onValueChanged.AddListener(SetMusicVolumen);
         FXVolumenSlider.onValueChanged.AddListener(SetSFXVolumen);
     }
