@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour {
@@ -9,8 +10,8 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource ambienceSource;
 
-    public float MusicVolumen;
-    public float SFXVolumen;
+    float MusicVolumen = 0;
+    float SFXVolumen = 0;
 
     public AudioMixer audioMixer;
 
@@ -18,11 +19,10 @@ public class AudioManager : MonoBehaviour {
     public AudioClip[] onPuzzleComplete = new AudioClip[2];
     public AudioClip[] levelMusic = new AudioClip[5];
 
-    public delegate void OnMusicVolumenChange(float newVolumen);
-    public OnMusicVolumenChange onMusicVolumenChanged;
+    //Settings
 
-    public delegate void OnSFXVolumenChange(float newVolumen);
-    public OnSFXVolumenChange onSFXVolumenChanged;
+    public Slider MusicVolumenSlider;
+    public Slider FXVolumenSlider;
 
     private void Awake() {
         if (Instance != null & Instance != this) {
@@ -42,21 +42,21 @@ public class AudioManager : MonoBehaviour {
 
     public void LoadPlayerPrefs() 
     {
-        if (PlayerPrefs.HasKey("MusicVolume"))
+        if (PlayerPrefs.HasKey("MusicVolumen"))
         {
-            SetMusicVolumen(PlayerPrefs.GetFloat("MusicVolume"));
+            SetMusicVolumen(PlayerPrefs.GetFloat("MusicVolumen"));
         }
 
-        if (PlayerPrefs.HasKey("FXVolume"))
+        if (PlayerPrefs.HasKey("SFXVolumen"))
         {
-            SetSFXVolumen(PlayerPrefs.GetFloat("FXVolume"));
+            SetSFXVolumen(PlayerPrefs.GetFloat("SFXVolumen"));
         }
-    }
 
-    public void SavePlayerPrefs() 
-    {
-        PlayerPrefs.SetFloat("MusicVolumen", MusicVolumen);
-        PlayerPrefs.SetFloat("FXVolume", SFXVolumen);
+        MusicVolumenSlider.value = MusicVolumen;
+        FXVolumenSlider.value = SFXVolumen;
+            
+        MusicVolumenSlider.onValueChanged.AddListener(SetMusicVolumen);
+        FXVolumenSlider.onValueChanged.AddListener(SetSFXVolumen);
     }
 
     public void PlayRandomMusic() 
@@ -69,7 +69,6 @@ public class AudioManager : MonoBehaviour {
             return;
         }
 
-        //musicSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
         musicSource.clip = levelMusic[randomMusicInt];
         musicSource.Play();
     }
@@ -121,33 +120,22 @@ public class AudioManager : MonoBehaviour {
             MusicVolumen = -80;
         }
 
-        //if (onMusicVolumenChanged != null) 
-        //{
-        //    onMusicVolumenChanged(volumen);
-        //}
-
         audioMixer.SetFloat("MusicVolumen", MusicVolumen);
-
-        SavePlayerPrefs();
+        PlayerPrefs.SetFloat("MusicVolumen", MusicVolumen);
     }
     public void SetSFXVolumen(float volumen) 
     {
         SFXVolumen = volumen;
-
+        
         //If we on lowest val on slider, we just mute
         if (SFXVolumen <= -30) 
         {
             SFXVolumen = -80;
         }
 
-        //if (onSFXVolumenChanged != null)
-        //{
-        //    onSFXVolumenChanged(volumen);
-        //}
-
         audioMixer.SetFloat("SFXVolumen", SFXVolumen);
 
-        SavePlayerPrefs();
+        PlayerPrefs.SetFloat("SFXVolumen", SFXVolumen);
     }
 
     public void PlayOnPuzzleComplete()
