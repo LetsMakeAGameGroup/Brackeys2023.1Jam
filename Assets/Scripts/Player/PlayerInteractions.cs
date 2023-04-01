@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerCameraController))]
@@ -16,7 +17,7 @@ public class PlayerInteractions : MonoBehaviour {
         Ray ray = GetComponent<PlayerCameraController>().GetPlayerCamera().ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance)) {
             // Check if the object is interactable
-            if (!hit.transform.TryGetComponent(out IInteractable interactable)) {
+            if (!hit.transform.TryGetComponent(out IInteractable interactable) || (interactable != null && interactable is TimedLever && !(interactable as TimedLever).canReset && (interactable as TimedLever).compleated)) {
                 UIManager.Instance.ToggleInteractionUI(this, null);
                 return;
             }
