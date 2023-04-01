@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1291158603436417648}
   - component: {fileID: 4983115969899235838}
   - component: {fileID: -2787074168254078558}
-  - component: {fileID: 7340455166987211580}
   m_Layer: 3
   m_Name: SlidingBox
   m_TagString: Untagged
@@ -139,7 +138,8 @@ AudioSource:
   m_GameObject: {fileID: 1291158603436417650}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -9066845986845929513, guid: 3a9fcc44bffebcf449e6f3bba6e20507,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f57d2afac963ff84eb507768efd9c37e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -226,16 +226,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7340455166987211580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291158603436417650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78c3a12783f8a540996a832b557192d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundType: 0

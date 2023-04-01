@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour {
@@ -8,18 +10,19 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource ambienceSource;
 
-    public float MusicVolumen;
-    public float SFXVolumen;
+    float MusicVolumen = 0;
+    float SFXVolumen = 0;
+
+    public AudioMixer audioMixer;
 
     public AudioClip mainMenuMusic;
     public AudioClip[] onPuzzleComplete = new AudioClip[2];
     public AudioClip[] levelMusic = new AudioClip[5];
 
-    public delegate void OnMusicVolumenChange(float newVolumen);
-    public OnMusicVolumenChange onMusicVolumenChanged;
+    //Settings
 
-    public delegate void OnSFXVolumenChange(float newVolumen);
-    public OnSFXVolumenChange onSFXVolumenChanged;
+    public Slider MusicVolumenSlider;
+    public Slider FXVolumenSlider;
 
     private void Awake() {
         if (Instance != null & Instance != this) {
@@ -28,22 +31,39 @@ public class AudioManager : MonoBehaviour {
             Instance = this;
         }
 
-        PlayAmbience();
-
         OneShotSource = GetComponent<AudioSource>();
     }
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("MusicVolume"))
+        LoadPlayerPrefs();
+        PlayAmbience();
+    }
+
+    public void LoadPlayerPrefs() 
+    {
+        if (PlayerPrefs.HasKey("MusicVolumen"))
         {
-            SetMusicVolumen(PlayerPrefs.GetFloat("MusicVolume"));
+            SetMusicVolumen(PlayerPrefs.GetFloat("MusicVolumen"));
         }
 
-        if (PlayerPrefs.HasKey("FXVolume"))
+        if (PlayerPrefs.HasKey("SFXVolumen"))
         {
-            SetSFXVolumen(PlayerPrefs.GetFloat("FXVolume"));
+            SetSFXVolumen(PlayerPrefs.GetFloat("SFXVolumen"));
         }
+
+        if (MusicVolumenSlider != null)
+        {
+            MusicVolumenSlider.value = MusicVolumen;
+        }
+
+        if (FXVolumenSlider != null)
+        {
+            FXVolumenSlider.value = SFXVolumen;
+        }
+
+        MusicVolumenSlider.onValueChanged.AddListener(SetMusicVolumen);
+        FXVolumenSlider.onValueChanged.AddListener(SetSFXVolumen);
     }
 
     public void PlayRandomMusic() 
@@ -56,7 +76,6 @@ public class AudioManager : MonoBehaviour {
             return;
         }
 
-        //musicSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
         musicSource.clip = levelMusic[randomMusicInt];
         musicSource.Play();
     }
@@ -67,7 +86,6 @@ public class AudioManager : MonoBehaviour {
             return;
         }
 
-        //musicSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
         musicSource.clip = musicToPlay;
         musicSource.Play();
     }
@@ -90,12 +108,12 @@ public class AudioManager : MonoBehaviour {
     }
 
     public void PlayAmbience() {
+
         if (!musicSource) {
             Debug.LogError("Trying to play ambience when an AudioSource has not been set.", transform);
             return;
         }
 
-        ambienceSource.volume = (PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 50f) / 100f;
         ambienceSource.Play();
     }
 
@@ -103,30 +121,38 @@ public class AudioManager : MonoBehaviour {
     {
         MusicVolumen = volumen;
 
-        if (onMusicVolumenChanged != null) 
+        //If we on lowest val on slider, we just mute
+        if (MusicVolumen <= -30)
         {
-            onMusicVolumenChanged(volumen);
+            MusicVolumen = -80;
         }
 
-        musicSource.volume = volumen;
+        audioMixer.SetFloat("MusicVolumen", MusicVolumen);
+        PlayerPrefs.SetFloat("MusicVolumen", MusicVolumen);
     }
     public void SetSFXVolumen(float volumen) 
     {
         SFXVolumen = volumen;
-
-        if (onSFXVolumenChanged != null)
+        
+        //If we on lowest val on slider, we just mute
+        if (SFXVolumen <= -30) 
         {
-            onSFXVolumenChanged(volumen);
+            SFXVolumen = -80;
         }
 
-        ambienceSource.volume = volumen;
+        audioMixer.SetFloat("SFXVolumen", SFXVolumen);
+
+        PlayerPrefs.SetFloat("SFXVolumen", SFXVolumen);
     }
 
     public void PlayOnPuzzleComplete()
     {
         int randomNum = Random.Range(0, 1);
+        musicSource.PlayOneShot(onPuzzleComplete[randomNum]);
+    }
 
-        OneShotSource.volume = SFXVolumen;
-        OneShotSource.PlayOneShot(onPuzzleComplete[randomNum]);
+    public void PlayOneShotSound(AudioClip audio) 
+    {
+        OneShotSource.PlayOneShot(audio);
     }
 }

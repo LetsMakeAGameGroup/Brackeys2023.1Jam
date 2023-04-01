@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -417,26 +417,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1497408546 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3101449216341225837, guid: 995f18ef4bff05440b87034f70ae433f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3101449216349447134}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1497408547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497408546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5f6cde08be682449224139e63fd713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundVolumenSlider: {fileID: 174950072}
-  FXVolumenSlider: {fileID: 1892232798}
 --- !u!1001 &1633091428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,6 +424,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3309464399274953192, guid: 6ae3b414fef3efd45a6e5b2915ffbc86,
+        type: 3}
+      propertyPath: FXVolumenSlider
+      value: 
+      objectReference: {fileID: 1892232798}
+    - target: {fileID: 3309464399274953192, guid: 6ae3b414fef3efd45a6e5b2915ffbc86,
+        type: 3}
+      propertyPath: MusicVolumenSlider
+      value: 
+      objectReference: {fileID: 174950072}
     - target: {fileID: 3309464399274953193, guid: 6ae3b414fef3efd45a6e5b2915ffbc86,
         type: 3}
       propertyPath: m_Name
@@ -504,6 +494,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3309464399484591073, guid: 6ae3b414fef3efd45a6e5b2915ffbc86,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5899188923618347087, guid: 3a9fcc44bffebcf449e6f3bba6e20507,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ae3b414fef3efd45a6e5b2915ffbc86, type: 3}
 --- !u!1 &1858758360
@@ -597,11 +593,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 3679875297403403571, guid: 995f18ef4bff05440b87034f70ae433f,
-        type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3679875297403403573, guid: 995f18ef4bff05440b87034f70ae433f,
         type: 3}
@@ -707,16 +698,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7171758596234251107, guid: 995f18ef4bff05440b87034f70ae433f,
-        type: 3}
-      propertyPath: m_Value
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7171758597710977431, guid: 995f18ef4bff05440b87034f70ae433f,
-        type: 3}
-      propertyPath: m_Value
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 995f18ef4bff05440b87034f70ae433f, type: 3}

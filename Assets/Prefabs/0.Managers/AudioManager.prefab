@@ -44,7 +44,8 @@ AudioSource:
   m_GameObject: {fileID: 3309464399274953193}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -9066845986845929513, guid: 3a9fcc44bffebcf449e6f3bba6e20507,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -143,11 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67523245b5adbce49a667f28347bbcd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OneShotSource: {fileID: 0}
+  OneShotSource: {fileID: 3309464399274953195}
   musicSource: {fileID: 3309464399484591073}
   ambienceSource: {fileID: 3309464400182150690}
-  MusicVolumen: 0
-  SFXVolumen: 0
+  audioMixer: {fileID: 24100000, guid: 3a9fcc44bffebcf449e6f3bba6e20507, type: 2}
   mainMenuMusic: {fileID: 0}
   onPuzzleComplete:
   - {fileID: 8300000, guid: c2f6f43ef8b53bd4d8f36e9c18730292, type: 3}
@@ -158,6 +158,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d527ff46b9f28fc43bbf7bb3eef9797e, type: 3}
   - {fileID: 8300000, guid: 0d691ef5b88d09b48bbb3068bf2579db, type: 3}
   - {fileID: 8300000, guid: d9d41b00ceeb971419396ae63972cad7, type: 3}
+  MusicVolumenSlider: {fileID: 0}
+  FXVolumenSlider: {fileID: 0}
 --- !u!1 &3309464399484591078
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +201,8 @@ AudioSource:
   m_GameObject: {fileID: 3309464399484591078}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5899188923618347087, guid: 3a9fcc44bffebcf449e6f3bba6e20507,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -327,7 +330,8 @@ AudioSource:
   m_GameObject: {fileID: 3309464400182150691}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5899188923618347087, guid: 3a9fcc44bffebcf449e6f3bba6e20507,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f84206f8d7897d044bf33f6fdd54ea4d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
