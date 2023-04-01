@@ -7,7 +7,7 @@ using UnityEngine;
 public class DayManager : MonoBehaviour {
     public static DayManager Instance { get; private set; }
 
-    [SerializeField] private int currentDay = 0;  // 0 is pre-game. This will immediately increase by one on game start.
+    [SerializeField] private int currentDay;
 
     [HideInInspector] public List<GameObject> dayObjects = new();
 
@@ -20,6 +20,7 @@ public class DayManager : MonoBehaviour {
 
         dayObjects = FindObjectsOfType<DayObject>(true).Select(dayObject => dayObject.gameObject).ToList();
 
+        currentDay = 0;
         AdvanceDay();
     }
 

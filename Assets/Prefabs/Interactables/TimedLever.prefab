@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4361885717534232509}
   - component: {fileID: -1748776702221089947}
-  - component: {fileID: 2618290574800166172}
   - component: {fileID: 7055379700561725560}
   - component: {fileID: 707249096543110574}
   m_Layer: 0
@@ -52,23 +51,7 @@ MonoBehaviour:
   listener: {fileID: 0}
   compleated: 0
   timer: 10
---- !u!114 &2618290574800166172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2239177520601279989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6021e34bbf745f409906068f25566a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstDay: 1
-  secondDay: 1
-  thirdDay: 1
-  fourthDay: 1
-  fifthDay: 1
+  canReset: 1
 --- !u!65 &7055379700561725560
 BoxCollider:
   m_ObjectHideFlags: 0

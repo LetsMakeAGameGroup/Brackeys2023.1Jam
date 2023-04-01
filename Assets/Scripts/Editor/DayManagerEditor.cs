@@ -18,12 +18,18 @@ public class DayManagerEditor : Editor {
 
         if (EditorGUILayout.LinkButton("Reload DayObjects")) {
             List<GameObject> dayObjects = FindObjectsOfType<DayObject>(true).Select(dayObject => dayObject.gameObject).ToList();
-            
-            foreach (GameObject dayObject in dayObjects) {
-                if (dayObject.activeSelf && !dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay.intValue)) {
-                    dayObject.SetActive(false);
-                } else if (!dayObject.activeSelf && dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay.intValue)) {
+
+            if (currentDay.intValue == 0) {
+                foreach (GameObject dayObject in dayObjects) {
                     dayObject.SetActive(true);
+                }
+            } else {
+                foreach (GameObject dayObject in dayObjects) {
+                    if (dayObject.activeSelf && !dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay.intValue)) {
+                        dayObject.SetActive(false);
+                    } else if (!dayObject.activeSelf && dayObject.GetComponent<DayObject>().IsActiveOnDay(currentDay.intValue)) {
+                        dayObject.SetActive(true);
+                    }
                 }
             }
         }
