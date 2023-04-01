@@ -85,6 +85,7 @@ MonoBehaviour:
   sprintSpeed: 10
   jumpSpeed: 6
   characterController: {fileID: 0}
+  playerInteractions: {fileID: 0}
 --- !u!114 &7078558874922188745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +259,7 @@ GameObject:
   - component: {fileID: 4501773276962217073}
   m_Layer: 3
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
