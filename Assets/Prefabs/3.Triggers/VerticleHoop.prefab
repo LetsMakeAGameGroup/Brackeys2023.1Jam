@@ -192,7 +192,6 @@ GameObject:
   - component: {fileID: 2673898480709173241}
   - component: {fileID: 5940964469708666698}
   - component: {fileID: 1231168613706991416}
-  - component: {fileID: 68842061369503182}
   m_Layer: 0
   m_Name: VerticleHoop
   m_TagString: Untagged
@@ -341,16 +340,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &68842061369503182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6685834703896916339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78c3a12783f8a540996a832b557192d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundType: 0

@@ -15,7 +15,7 @@ public class MovingPlatform : Listener, IPuzzleSuccessReceptor
 
     private Coroutine moveToNextPointCoroutine;
 
-    [SerializeField] private PlatformColliderTrigger trigger;
+    //[SerializeField] private PlatformColliderTrigger trigger;
 
     private void Start()
     {
@@ -46,7 +46,7 @@ public class MovingPlatform : Listener, IPuzzleSuccessReceptor
         Vector3 currentPos = platform.localPosition;
         Vector3 nextPoint = positionToMove;
 
-        trigger.movement = (nextPoint - currentPos).normalized;
+        //trigger.movement = (nextPoint - currentPos).normalized;
 
         while (platform.localPosition != nextPoint)
         {

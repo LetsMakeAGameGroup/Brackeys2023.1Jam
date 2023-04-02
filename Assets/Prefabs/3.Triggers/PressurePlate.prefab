@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 484469203720490081}
   - component: {fileID: 484469203720490111}
   - component: {fileID: -9140895355543020773}
-  - component: {fileID: 9100689756854728422}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -49,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listener: {fileID: 0}
   compleated: 0
+  onTriggerAudioClip: {fileID: 0}
   canBeToggle: 1
   beingPressed: 0
   layerMask:
@@ -151,19 +151,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9100689756854728422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484469203720490110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78c3a12783f8a540996a832b557192d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundType: 0
 --- !u!1001 &5914323478674922434
 PrefabInstance:
   m_ObjectHideFlags: 0
